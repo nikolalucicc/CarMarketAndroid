@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:backgroundTint="#B6D0E2"
+    android:elevation="6dp"
+    android:padding="8dp"
+    app:cardCornerRadius="13dp"
+    app:cardElevation="4dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/adImageView"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <TextView
+            android:id="@+id/adPriceTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:textColor="@color/black"
+            android:text="1000"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <TextView
+            android:id="@+id/adBrandTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Brand"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toEndOf="@id/adImageView"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/adModelTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Model"
+            android:textColor="@android:color/black"
+            android:layout_marginTop="8dp"
+            android:textSize="16sp"
+            android:layout_marginStart="8dp"
+            app:layout_constraintStart_toEndOf="@id/adBrandTextView"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/adYearTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Year"
+            android:textColor="@android:color/black"
+            android:layout_marginTop="8dp"
+            android:textSize="16sp"
+            android:layout_marginStart="8dp"
+            app:layout_constraintStart_toEndOf="@id/adModelTextView"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/adMileageTextView"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Mileage"
+            android:textColor="@android:color/black"
+            android:layout_marginStart="8dp"
+            android:layout_marginBottom="10dp"
+            app:layout_constraintStart_toEndOf="@id/adImageView"
+            app:layout_constraintBottom_toTopOf="@id/adEngineCubicTextView" />
+
+        <TextView
+            android:id="@+id/adEngineTypeTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Engine Type"
+            android:layout_marginBottom="10dp"
+            android:textColor="@android:color/black"
+            android:layout_marginStart="20dp"
+            app:layout_constraintStart_toEndOf="@id/adMileageTextView"
+            app:layout_constraintBottom_toTopOf="@id/adEngineHpTextView"/>
+
+        <TextView
+            android:id="@+id/adEngineCubicTextView"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="Engine Cubic"
+            android:textColor="@android:color/black"
+            android:layout_marginStart="8dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintStart_toEndOf="@id/adImageView"
+            app:layout_constraintBottom_toTopOf="@id/adPriceTextView" />
+
+        <TextView
+            android:id="@+id/adEngineHpTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Engine HP"
+            android:textColor="@android:color/black"
+            android:layout_marginBottom="8dp"
+            android:layout_marginStart="20dp"
+            app:layout_constraintStart_toEndOf="@id/adEngineCubicTextView"
+            app:layout_constraintBottom_toTopOf="@id/adPriceTextView" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
