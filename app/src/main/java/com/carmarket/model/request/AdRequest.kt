@@ -1,7 +1,5 @@
 package com.carmarket.model.request
 
-import com.carmarket.model.dto.ImageDTO
-
 data class AdRequest (
 
     val description: String,

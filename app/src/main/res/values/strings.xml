@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">CarMarket</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="nav_all_ads">Svi oglasi</string>
+    <string name="nav_search">Pretraga oglasa</string>
+    <string name="nav_login">Login</string>
+    <string name="nav_registration">Registracija</string>
+    <string name="nav_create_ad">Kreiranje oglasa</string>
+    <string name="nav_users_ads">Vasi oglasi</string>
+    <string name="nav_profile">Profil</string>
+    <string name="nav_following_ads">Oglasi koje pratite</string>
+
+    <string name="error">Error</string>
+    <string name="errorMessage">An error occurred. Please restart application.</string>
+    <string name="ok">OK</string>
 </resources>
