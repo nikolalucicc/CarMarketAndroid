@@ -9,5 +9,14 @@
         android:id="@+id/allAdsFragment"
         android:name="com.carmarket.ui.allAds.AllAdsFragment"
         android:label="fragment_all_ads"
-        tools:layout="@layout/fragment_all_ads" />
+        tools:layout="@layout/fragment_all_ads">
+        <action
+            android:id="@+id/action_allAdsFragment_to_adDetailsFragment"
+            app:destination="@id/adDetailsFragment"/>
+    </fragment>
+    <fragment
+        android:id="@+id/adDetailsFragment"
+        android:name="com.carmarket.ui.adDetails.AdDetailsFragment"
+        android:label="fragment_ad_details"
+        tools:layout="@layout/fragment_ad_details" />
 </navigation>

@@ -8,10 +8,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AlertDialog
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.carmarket.R
 import com.carmarket.databinding.FragmentAllAdsBinding
 import com.carmarket.stateClasses.AdUIState
+import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
@@ -36,28 +38,33 @@ class AllAdsFragment : Fragment() {
             isNestedScrollingEnabled
         }
 
+        adapter = AllAdsAdapter(emptyList()) { id ->
+            val bundle = Bundle()
+            bundle.putLong("adId", id)
+            findNavController().navigate(R.id.action_allAdsFragment_to_adDetailsFragment, bundle)
+        }
+        recyclerView?.adapter = adapter
+
         lifecycleScope.launch {
             viewModel.getAllAds()
             allAds()
         }
-
-        adapter = AllAdsAdapter(emptyList())
-        recyclerView?.adapter = adapter
     }
 
     private fun allAds() {
         lifecycleScope.launch {
             viewModel.adUiDataState.collect { state ->
                 when (state) {
-                    is AdUIState.Loading -> {}
+                    is AdUIState.Loading -> binding?.allAdsProgressBar?.visibility = View.VISIBLE
 
                     is AdUIState.Success -> {
+                        binding?.allAdsProgressBar?.visibility = View.GONE
                         adapter?.setAdData(state.ads)
                         adapter?.notifyDataSetChanged()
                     }
 
                     is AdUIState.Error -> {
-                        Log.d("greska", state.message)
+                        Log.d("Error", state.message)
                         showErrorDialog()
                     }
                 }
@@ -65,19 +72,17 @@ class AllAdsFragment : Fragment() {
         }
     }
 
-
     override fun onDestroyView() {
         super.onDestroyView()
         binding = null
     }
 
     private fun showErrorDialog() {
-        val alertDialogBuilder = AlertDialog.Builder(requireContext())
-        alertDialogBuilder.apply {
+        AlertDialog.Builder(requireContext()).apply {
             setTitle(R.string.error)
             setMessage(R.string.errorMessage)
             setPositiveButton(R.string.ok) { _, _ ->
-                create().closeOptionsMenu()
+                requireActivity().finishAffinity()
             }
             create().show()
         }

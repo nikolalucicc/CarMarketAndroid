@@ -6,8 +6,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.carmarket.databinding.AllAdsCardBinding
 import com.carmarket.model.responseBody.AdResponseBody
 
-class AllAdsAdapter(private var list: List<AdResponseBody>) :
-    RecyclerView.Adapter<AllAdsViewHolder>() {
+class AllAdsAdapter(
+    private var list: List<AdResponseBody>,
+    private val onItemClick: (Long) -> Unit
+) : RecyclerView.Adapter<AllAdsViewHolder>() {
 
     fun setAdData(list: List<AdResponseBody>) {
         this.list = list
@@ -22,7 +24,7 @@ class AllAdsAdapter(private var list: List<AdResponseBody>) :
 
     override fun onBindViewHolder(holder: AllAdsViewHolder, position: Int) {
         val data = list[position]
-        holder.bind(data)
+        holder.bind(data, onItemClick)
     }
 
 }
