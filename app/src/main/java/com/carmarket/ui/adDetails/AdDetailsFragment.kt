@@ -101,7 +101,6 @@ class AdDetailsFragment : Fragment() {
         adCountryDetailTextView.text = data.country
         adDetailDescriptionTextView.text = data.description
 
-        // Ovdje dodajte logiku za postavljanje slika u ViewPager2
         val imageUrls = data.images
         val adapter = ImagePagerAdapter(imageUrls)
         imageViewPager.adapter = adapter

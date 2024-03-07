@@ -2,11 +2,13 @@ package com.carmarket.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import androidx.core.view.GravityCompat
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import com.carmarket.R
 import com.carmarket.databinding.ActivityMainBinding
+import com.carmarket.ui.allAds.AllAdsFragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -25,6 +27,15 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(binding?.toolbar?.toolbarLayout)
         supportActionBar?.setDisplayShowTitleEnabled(false)
         binding?.setUpDrawerLayout()
+
+        navController.addOnDestinationChangedListener { _, destination, _ ->
+            if (destination.id == R.id.allAdsFragment) {
+                binding?.toolbar?.sortSpinner?.visibility = View.VISIBLE
+            } else {
+                binding?.toolbar?.sortSpinner?.visibility = View.GONE
+            }
+        }
+
     }
 
     private fun ActivityMainBinding.setUpDrawerLayout() {

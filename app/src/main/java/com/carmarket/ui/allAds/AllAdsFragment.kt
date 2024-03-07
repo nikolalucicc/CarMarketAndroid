@@ -4,6 +4,9 @@ import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AlertDialog
@@ -45,9 +48,60 @@ class AllAdsFragment : Fragment() {
         }
         recyclerView?.adapter = adapter
 
+        setHasOptionsMenu(true)
+
         lifecycleScope.launch {
             viewModel.getAllAds()
             allAds()
+        }
+    }
+
+    @Deprecated("Deprecated in Java")
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.sort_menu, menu)
+        super.onCreateOptionsMenu(menu, inflater)
+    }
+
+    @Deprecated("Deprecated in Java")
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.basicSort -> {
+                viewModel.getAllAds()
+                true
+            }
+            R.id.sortByYearDesc -> {
+                viewModel.sortByYearDesc()
+                true
+            }
+            R.id.sortByYearAsc -> {
+                viewModel.sortByYearAsc()
+                true
+            }
+            R.id.sortByPriceDesc -> {
+                viewModel.sortByPriceDesc()
+                true
+            }
+            R.id.sortByPriceAsc -> {
+                viewModel.sortByPriceAsc()
+                true
+            }
+            R.id.sortByMileageDesc -> {
+                viewModel.sortByMileageDesc()
+                true
+            }R.id.sortByMileageAsc -> {
+                viewModel.sortByMileageAsc()
+                true
+            }
+            R.id.sortByPostedDateDesc -> {
+                viewModel.sortByPostedDateDesc()
+                true
+            }
+            R.id.sortByPostedDateAsc -> {
+                viewModel.sortByPostedDateAsc()
+                true
+            }
+
+            else -> super.onOptionsItemSelected(item)
         }
     }
 
