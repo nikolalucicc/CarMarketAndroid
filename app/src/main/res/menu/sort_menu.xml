@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.NavigationActivity">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/basicSort"
+            android:title="@string/basicSort"/>
+        <item
+            android:id="@+id/sortByYearDesc"
+            android:title="@string/sortByYearDesc"/>
+        <item
+            android:id="@+id/sortByYearAsc"
+            android:title="@string/sortByYearAsc"/>
+        <item
+            android:id="@+id/sortByPriceDesc"
+            android:title="@string/sortByPriceDesc"/>
+        <item
+            android:id="@+id/sortByPriceAsc"
+            android:title="@string/sortByPriceAsc"/>
+        <item
+            android:id="@+id/sortByMileageDesc"
+            android:title="@string/sortByMileageDesc"/>
+        <item
+            android:id="@+id/sortByMileageAsc"
+            android:title="@string/sortByMileageAsc"/>
+        <item
+            android:id="@+id/sortByPostedDateDesc"
+            android:title="@string/sortByPostedDateDesc"/>
+        <item
+            android:id="@+id/sortByPostedDateAsc"
+            android:title="@string/sortByPostedDateAsc"/>
+
+    </group>
+
+</menu>

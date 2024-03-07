@@ -40,4 +40,14 @@
     <string name="kw">%1$d kw</string>
     <string name="cubic">%1$d cm³</string>
     <string name="price">%1$d €</string>
+
+    <string name="sortByYearDesc">Godini proizvodnje opadajuce</string>
+    <string name="sortByYearAsc">Godini proizvodnje rastuce</string>
+    <string name="sortByPriceDesc">Ceni opadajuce</string>
+    <string name="sortByPriceAsc">Ceni rastuce</string>
+    <string name="sortByMileageDesc">Kilometrazi opadajuce</string>
+    <string name="sortByMileageAsc">Kilometrazi rastuce</string>
+    <string name="sortByPostedDateDesc">Datumu postavljanja opadajuce</string>
+    <string name="sortByPostedDateAsc">Datumu postavljanja rastuce</string>
+    <string name="basicSort">Osnovno</string>
 </resources>

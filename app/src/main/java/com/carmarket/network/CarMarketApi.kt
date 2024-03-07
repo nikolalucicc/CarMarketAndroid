@@ -10,6 +10,30 @@ interface CarMarketApi {
     @GET("ad")
     suspend fun getAllAds(): Response<List<AdResponseBody>>
 
+    @GET("ad/sortByYearDesc")
+    suspend fun sortByYearDesc(): Response<List<AdResponseBody>>
+
+    @GET("ad/sortByYearAsc")
+    suspend fun sortByYearAsc(): Response<List<AdResponseBody>>
+
+    @GET("ad/sortByPriceDesc")
+    suspend fun sortByPriceDesc(): Response<List<AdResponseBody>>
+
+    @GET("ad/sortByPriceAsc")
+    suspend fun sortByPriceAsc(): Response<List<AdResponseBody>>
+
+    @GET("ad/sortByMileageDesc")
+    suspend fun sortByMileageDesc(): Response<List<AdResponseBody>>
+
+    @GET("ad/sortByMileageAsc")
+    suspend fun sortByMileageAsc(): Response<List<AdResponseBody>>
+
+    @GET("ad/sortByPostedDateDesc")
+    suspend fun sortByPostedDateDesc(): Response<List<AdResponseBody>>
+
+    @GET("ad/sortByPostedDateAsc")
+    suspend fun sortByPostedDateAsc(): Response<List<AdResponseBody>>
+
     @GET("ad/{id}")
     suspend fun getAdDetails(@Path("id") id: Long): Response<AdResponseBody>
 }
