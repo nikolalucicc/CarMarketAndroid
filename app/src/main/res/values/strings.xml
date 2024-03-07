@@ -15,4 +15,29 @@
     <string name="error">Error</string>
     <string name="errorMessage">An error occurred. Please restart application.</string>
     <string name="ok">OK</string>
+
+    <string name="generalInformationTextView">Opste informacije</string>
+    <string name="brandTextView">Brend</string>
+    <string name="modelTextView">Model</string>
+    <string name="yearTextView">Godina proizvodnje</string>
+    <string name="conditionTextView">Stranje</string>
+    <string name="additionalInfoTextView">Dodatne informacije</string>
+    <string name="mileageTextView">Kilometraza</string>
+    <string name="engineTypeTextView">Tip goriva</string>
+    <string name="hpTextView">KS</string>
+    <string name="kwTextView">KW</string>
+    <string name="cubicTextView">Kubikaza</string>
+    <string name="transmissionTextView">Vrsta menjaca</string>
+    <string name="locationTextView">Lokacija</string>
+    <string name="cityTextView">Grad</string>
+    <string name="countryTextView">Drzava</string>
+    <string name="descriptionTextView">Opis</string>
+    <string name="priceTextView">Cena: </string>
+
+    <string name="km">%1$d km</string>
+    <string name="year">%1$d. godina</string>
+    <string name="ks">%1$d ks</string>
+    <string name="kw">%1$d kw</string>
+    <string name="cubic">%1$d cm³</string>
+    <string name="price">%1$d €</string>
 </resources>

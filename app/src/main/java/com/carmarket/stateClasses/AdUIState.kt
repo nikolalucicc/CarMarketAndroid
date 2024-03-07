@@ -1,7 +1,6 @@
 package com.carmarket.stateClasses
 
 import com.carmarket.model.responseBody.AdResponseBody
-import com.carmarket.repository.AdRepository
 
 sealed class AdUIState {
 
