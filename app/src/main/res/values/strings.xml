@@ -20,10 +20,10 @@
     <string name="brandTextView">Brend</string>
     <string name="modelTextView">Model</string>
     <string name="yearTextView">Godina proizvodnje</string>
-    <string name="conditionTextView">Stranje</string>
+    <string name="conditionTextView">Stanje</string>
     <string name="additionalInfoTextView">Dodatne informacije</string>
     <string name="mileageTextView">Kilometraza</string>
-    <string name="engineTypeTextView">Tip goriva</string>
+    <string name="fuelTextView">Tip goriva</string>
     <string name="hpTextView">KS</string>
     <string name="kwTextView">KW</string>
     <string name="cubicTextView">Kubikaza</string>
@@ -33,6 +33,15 @@
     <string name="countryTextView">Drzava</string>
     <string name="descriptionTextView">Opis</string>
     <string name="priceTextView">Cena: </string>
+    <string name="driveTextView">Tip pogona</string>
+    <string name="doorNumberTextView">Broj vrata</string>
+    <string name="seatsNumberTextView">Broj sedista</string>
+    <string name="wheelSideTextView">Strana volana</string>
+    <string name="airConditioningTextView">Tip klime</string>
+    <string name="colorTextView">Boja</string>
+    <string name="interiorColorTextView">Boja enterijera</string>
+    <string name="registeredUntilTextView">Registrovan do</string>
+    <string name="phoneNumberTextView">Broj telefona</string>
 
     <string name="km">%1$d km</string>
     <string name="year">%1$d. godina</string>

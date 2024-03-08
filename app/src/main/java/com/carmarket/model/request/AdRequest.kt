@@ -9,7 +9,7 @@ data class AdRequest (
     val price: Long,
     val condition: String,
     val mileage: Long,
-    val engineType: String,
+    val fuel: String,
     val engineHp: Long,
     val engineKw: Long,
     val engineCubic: Long,

@@ -100,7 +100,7 @@
             app:layout_constraintBottom_toTopOf="@id/adEngineCubicTextView" />
 
         <TextView
-            android:id="@+id/adEngineTypeTextView"
+            android:id="@+id/adFuelTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Engine Type"
