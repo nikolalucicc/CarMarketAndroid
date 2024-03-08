@@ -17,7 +17,7 @@ class AllAdsViewHolder(
         binding.adYearTextView.text = data.year.toString()
         binding.adMileageTextView.text = data.mileage.toString()
         binding.adEngineHpTextView.text = data.engineHp.toString()
-        binding.adEngineTypeTextView.text = data.engineType
+        binding.adFuelTextView.text = data.fuel
         binding.adEngineCubicTextView.text = data.engineCubic.toString()
         binding.adIdTextView.text = data.id.toString()
 

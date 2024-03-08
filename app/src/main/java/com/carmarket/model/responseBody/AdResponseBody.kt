@@ -28,8 +28,8 @@ data class AdResponseBody(
     @SerializedName("mileage")
     val mileage: Long,
 
-    @SerializedName("engineType")
-    val engineType: String,
+    @SerializedName("fuel")
+    val fuel: String,
 
     @SerializedName("engineHp")
     val engineHp: Long,
@@ -53,6 +53,33 @@ data class AdResponseBody(
     val postedDate: List<Int>,
 
     @SerializedName("images")
-    val images: List<ImageResponseBody>
+    val images: List<ImageResponseBody>,
+
+    @SerializedName("drive")
+    val drive: String,
+
+    @SerializedName("doorNumber")
+    val doorNumber: String,
+
+    @SerializedName("seatsNumber")
+    val seatsNumber: String,
+
+    @SerializedName("wheelSide")
+    val wheelSide: String,
+
+    @SerializedName("airConditioning")
+    val airConditioning: String,
+
+    @SerializedName("color")
+    val color: String,
+
+    @SerializedName("interiorColor")
+    val interiorColor: String,
+
+    @SerializedName("registeredUntil")
+    val registeredUntil: List<Int>,
+
+    @SerializedName("phoneNumber")
+    val phoneNumber: String
 
 )

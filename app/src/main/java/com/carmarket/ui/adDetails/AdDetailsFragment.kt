@@ -92,7 +92,7 @@ class AdDetailsFragment : Fragment() {
         adDetailPriceTextView.text = getString(R.string.price, data.price)
         adDetailConditionTextView.text = data.condition
         adDetailMileageTextView.text = getString(R.string.km, data.mileage)
-        adEngineTypeDetailTextView.text = data.engineType
+        adFuelDetailTextView.text = data.fuel
         adHpDetailTextView.text = getString(R.string.ks, data.engineHp)
         adKwDetailTextView.text = getString(R.string.kw, data.engineKw)
         adCubicDetailTextView.text = getString(R.string.cubic, data.engineCubic)
@@ -100,6 +100,15 @@ class AdDetailsFragment : Fragment() {
         adCityDetailTextView.text = data.city
         adCountryDetailTextView.text = data.country
         adDetailDescriptionTextView.text = data.description
+        adDriveDetailTextView.text = data.drive
+        adDoorNumberDetailTextView.text = data.doorNumber
+        adSeatsNumberDetailTextView.text = data.seatsNumber
+        adWheelSideDetailTextView.text = data.wheelSide
+        adAirConditioningDetailTextView.text = data.airConditioning
+        adColorDetailTextView.text = data.color
+        adInteriorColorDetailTextView.text = data.interiorColor
+        adRegisteredUntilDetailTextView.text = data.registeredUntil.joinToString(".")
+        adTelephoneNumberDetailTextView.text = data.phoneNumber
 
         val imageUrls = data.images
         val adapter = ImagePagerAdapter(imageUrls)
