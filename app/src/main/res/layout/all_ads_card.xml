@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -20,117 +19,129 @@
             android:layout_width="130dp"
             android:layout_height="130dp"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="4dp"
             android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"/>
+            app:layout_constraintTop_toBottomOf="@+id/adBrandTextView" />
 
         <TextView
             android:id="@+id/adPriceTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp"
             android:textColor="@color/black"
-            android:text="1000"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/adBrandTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Brand"
-            android:textColor="@android:color/black"
-            android:textSize="16sp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
-            app:layout_constraintStart_toEndOf="@id/adImageView"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/adModelTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Model"
-            android:textColor="@android:color/black"
+            android:layout_marginStart="4dp"
             android:layout_marginTop="8dp"
+            android:textColor="@android:color/black"
             android:textSize="16sp"
-            android:layout_marginStart="8dp"
             app:layout_constraintStart_toEndOf="@id/adBrandTextView"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/adYearTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Year"
-            android:textColor="@android:color/black"
-            android:layout_marginTop="8dp"
-            android:textSize="16sp"
-            android:layout_marginStart="8dp"
-            app:layout_constraintStart_toEndOf="@id/adModelTextView"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/adIdTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="id"
-            android:textColor="@android:color/black"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
-            android:textSize="16sp"
-            android:layout_marginStart="8dp"
-            app:layout_constraintStart_toEndOf="@id/adYearTextView"
-            app:layout_constraintTop_toTopOf="parent"
-            android:visibility="invisible"/>
-
-        <TextView
-            android:id="@+id/adMileageTextView"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:text="Mileage"
             android:textColor="@android:color/black"
-            android:layout_marginStart="8dp"
-            android:layout_marginBottom="10dp"
-            app:layout_constraintStart_toEndOf="@id/adImageView"
-            app:layout_constraintBottom_toTopOf="@id/adEngineCubicTextView" />
+            android:textSize="16sp"
+            android:visibility="invisible"
+            app:layout_constraintStart_toEndOf="@id/adModelTextView"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/adFuelTextView"
-            android:layout_width="wrap_content"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:text="Engine Type"
-            android:layout_marginBottom="10dp"
-            android:textColor="@android:color/black"
             android:layout_marginStart="20dp"
-            app:layout_constraintStart_toEndOf="@id/adMileageTextView"
-            app:layout_constraintBottom_toTopOf="@id/adEngineHpTextView"/>
+            android:layout_marginBottom="30dp"
+            android:textColor="@android:color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/adImageView"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/adEngineHpTextView"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="4dp"
+            android:textColor="@android:color/black"
+            app:layout_constraintStart_toEndOf="@+id/adImageView"
+            app:layout_constraintTop_toBottomOf="@id/adEngineCubicTextView" />
 
         <TextView
             android:id="@+id/adEngineCubicTextView"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:text="Engine Cubic"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="4dp"
             android:textColor="@android:color/black"
-            android:layout_marginStart="8dp"
-            android:layout_marginBottom="8dp"
-            app:layout_constraintStart_toEndOf="@id/adImageView"
-            app:layout_constraintBottom_toTopOf="@id/adPriceTextView" />
+            app:layout_constraintStart_toEndOf="@+id/adImageView"
+            app:layout_constraintTop_toBottomOf="@+id/adFuelTextView" />
 
         <TextView
-            android:id="@+id/adEngineHpTextView"
-            android:layout_width="wrap_content"
+            android:id="@+id/adMileageTextView"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:text="Engine HP"
-            android:textColor="@android:color/black"
-            android:layout_marginBottom="8dp"
             android:layout_marginStart="20dp"
-            app:layout_constraintStart_toEndOf="@id/adEngineCubicTextView"
-            app:layout_constraintBottom_toTopOf="@id/adPriceTextView" />
+            android:layout_marginBottom="30dp"
+            android:textColor="@android:color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/adFuelTextView"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/adDriveTextView"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="4dp"
+            android:textColor="@android:color/black"
+            app:layout_constraintStart_toEndOf="@+id/adEngineHpTextView"
+            app:layout_constraintTop_toBottomOf="@id/adMileageTextView" />
+
+        <TextView
+            android:id="@+id/adYearTextView"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="4dp"
+            android:textColor="@android:color/black"
+            app:layout_constraintStart_toEndOf="@+id/adEngineCubicTextView"
+            app:layout_constraintTop_toBottomOf="@+id/adDriveTextView" />
+
+        <TextView
+            android:id="@+id/adLocationTextView"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginBottom="8dp"
+            android:textColor="@android:color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/adImageView" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

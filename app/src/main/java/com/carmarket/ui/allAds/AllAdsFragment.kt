@@ -25,6 +25,7 @@ class AllAdsFragment : Fragment() {
     private var binding: FragmentAllAdsBinding? = null
     private val viewModel: AllAdsViewModel by sharedViewModel()
     private var adapter: AllAdsAdapter? = null
+    private var currentSortMethod: Int = R.id.basicSort
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -67,37 +68,55 @@ class AllAdsFragment : Fragment() {
         return when (item.itemId) {
             R.id.basicSort -> {
                 viewModel.getAllAds()
+                currentSortMethod = R.id.basicSort
+                item.isChecked = true
                 true
             }
             R.id.sortByYearDesc -> {
                 viewModel.sortByYearDesc()
+                currentSortMethod = R.id.sortByYearDesc
+                item.isChecked = true
                 true
             }
             R.id.sortByYearAsc -> {
                 viewModel.sortByYearAsc()
+                currentSortMethod = R.id.sortByYearAsc
+                item.isChecked = true
                 true
             }
             R.id.sortByPriceDesc -> {
                 viewModel.sortByPriceDesc()
+                currentSortMethod = R.id.sortByPriceDesc
+                item.isChecked = true
                 true
             }
             R.id.sortByPriceAsc -> {
                 viewModel.sortByPriceAsc()
+                currentSortMethod = R.id.sortByPriceAsc
+                item.isChecked = true
                 true
             }
             R.id.sortByMileageDesc -> {
                 viewModel.sortByMileageDesc()
+                currentSortMethod = R.id.sortByMileageDesc
+                item.isChecked = true
                 true
             }R.id.sortByMileageAsc -> {
                 viewModel.sortByMileageAsc()
+                currentSortMethod = R.id.sortByMileageAsc
+                item.isChecked = true
                 true
             }
             R.id.sortByPostedDateDesc -> {
                 viewModel.sortByPostedDateDesc()
+                currentSortMethod = R.id.sortByPostedDateDesc
+                item.isChecked = true
                 true
             }
             R.id.sortByPostedDateAsc -> {
                 viewModel.sortByPostedDateAsc()
+                currentSortMethod = R.id.sortByPostedDateAsc
+                item.isChecked = true
                 true
             }
 
