@@ -59,4 +59,12 @@
     <string name="sortByPostedDateDesc">Datumu postavljanja opadajuce</string>
     <string name="sortByPostedDateAsc">Datumu postavljanja rastuce</string>
     <string name="basicSort">Osnovno</string>
+
+    <string name="registration">Registracija</string>
+    <string name="firstName">Ime</string>
+    <string name="lastName">Prezime</string>
+    <string name="email">Email</string>
+    <string name="username">Username</string>
+    <string name="password">Sifra</string>
+    <string name="repeatedPassword">Ponovite sifru</string>
 </resources>
