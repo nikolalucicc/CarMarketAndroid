@@ -19,4 +19,9 @@
         android:name="com.carmarket.ui.adDetails.AdDetailsFragment"
         android:label="fragment_ad_details"
         tools:layout="@layout/fragment_ad_details" />
+    <fragment
+        android:id="@+id/registrationFragment"
+        android:name="com.carmarket.ui.registration.RegistrationFragment"
+        android:label="fragment_registration"
+        tools:layout="@layout/fragment_registration" />
 </navigation>

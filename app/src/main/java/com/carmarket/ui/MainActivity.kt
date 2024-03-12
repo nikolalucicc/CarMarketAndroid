@@ -50,11 +50,11 @@ class MainActivity : AppCompatActivity() {
                     true
                 }
 
-//                R.id.nav_air_pollution -> {
-//                    navController.navigate(R.id.airPollutionFragment)
-//                    drawerLayout.closeDrawer(GravityCompat.START)
-//                    true
-//                }
+                R.id.nav_registration -> {
+                    navController.navigate(R.id.registrationFragment)
+                    drawerLayout.closeDrawer(GravityCompat.START)
+                    true
+                }
 //
 //                R.id.nav_five_days -> {
 //                    navController.navigate(R.id.fiveDaysForecastFragment)
