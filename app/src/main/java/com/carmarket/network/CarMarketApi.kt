@@ -1,7 +1,9 @@
 package com.carmarket.network
 
+import com.carmarket.model.request.LoginRequest
 import com.carmarket.model.request.UserRequest
 import com.carmarket.model.responseBody.AdResponseBody
+import com.carmarket.model.responseBody.LoginResponseBody
 import com.carmarket.model.responseBody.UserResponseBody
 import retrofit2.Response
 import retrofit2.http.Body
@@ -43,4 +45,7 @@ interface CarMarketApi {
 
     @POST("/auth/registration")
     suspend fun registration(@Body userRequest: UserRequest)
+
+    @POST("/auth/login")
+    suspend fun login(@Body loginRequest: LoginRequest): Response<LoginResponseBody>
 }

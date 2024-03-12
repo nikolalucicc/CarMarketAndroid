@@ -10,6 +10,8 @@ import android.view.ViewGroup
 import androidx.annotation.RequiresExtension
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
+import com.carmarket.R
 import com.carmarket.databinding.FragmentRegistrationBinding
 import com.carmarket.model.request.UserRequest
 import kotlinx.coroutines.launch
@@ -30,6 +32,9 @@ class RegistrationFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        binding?.loginRedirectTextView?.setOnClickListener {
+            loginRedirect()
+        }
 
         binding?.registrationButton?.setOnClickListener {
             registerUser()
@@ -48,12 +53,12 @@ class RegistrationFragment : Fragment() {
         if (TextUtils.isEmpty(email) || TextUtils.isEmpty(password) ||
             TextUtils.isEmpty(repeatedPassword) || TextUtils.isEmpty(username) ||
             TextUtils.isEmpty(firstName) || TextUtils.isEmpty(lastName)) {
-            displayErrorDialog("Please fill in all fields")
+            displayErrorDialog("Molimo popunite sva polja")
             return
         }
 
         if (password != repeatedPassword) {
-            displayErrorDialog("The passwords do not match. Please enter matching passwords.")
+            displayErrorDialog("Sifre se ne poklapaju. Unesite iste sifre.")
             return
         }
 
@@ -64,15 +69,21 @@ class RegistrationFragment : Fragment() {
             try {
                 viewModel.registration(userRequest)
                 clearFields()
+                loginRedirect()
             } catch (e: HttpException) {
                 when (e.code()) {
-                    409 -> displayErrorDialog("Username or Email already exists")
-                    else -> displayErrorDialog("An unexpected error occurred")
+                    409 -> displayErrorDialog("Korisnicko ime ili email vec postoje")
+                    else -> displayErrorDialog("Greska")
                 }
             } catch (e: Exception) {
-                displayErrorDialog("An unexpected error occurred")
+                displayErrorDialog("Greska")
             }
         }
+    }
+
+    private fun loginRedirect(){
+        val navController = findNavController()
+        navController.navigate(R.id.action_registrationFragment_to_loginFragment)
     }
 
     private fun clearFields() {
@@ -86,7 +97,7 @@ class RegistrationFragment : Fragment() {
 
     private fun displayErrorDialog(message: String) {
         AlertDialog.Builder(requireContext())
-            .setTitle("Registration Error")
+            .setTitle("Greska pri registraciji")
             .setMessage(message)
             .setPositiveButton("OK") { dialog, _ ->
                 dialog.dismiss()

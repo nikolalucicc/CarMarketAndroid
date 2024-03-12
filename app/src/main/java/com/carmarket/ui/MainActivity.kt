@@ -55,12 +55,12 @@ class MainActivity : AppCompatActivity() {
                     drawerLayout.closeDrawer(GravityCompat.START)
                     true
                 }
-//
-//                R.id.nav_five_days -> {
-//                    navController.navigate(R.id.fiveDaysForecastFragment)
-//                    drawerLayout.closeDrawer(GravityCompat.START)
-//                    true
-//                }
+
+                R.id.nav_login -> {
+                    navController.navigate(R.id.loginFragment)
+                    drawerLayout.closeDrawer(GravityCompat.START)
+                    true
+                }
 //
 //                R.id.nav_about_creator -> {
 //                    navController.navigate(R.id.aboutCreatorFragment)

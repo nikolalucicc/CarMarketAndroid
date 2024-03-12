@@ -67,4 +67,7 @@
     <string name="username">Username</string>
     <string name="password">Sifra</string>
     <string name="repeatedPassword">Ponovite sifru</string>
+
+    <string name="login">Login</string>
+
 </resources>
