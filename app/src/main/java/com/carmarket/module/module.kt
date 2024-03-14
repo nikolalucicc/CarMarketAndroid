@@ -4,9 +4,11 @@ import com.carmarket.network.CarMarketApi
 import com.carmarket.network.RetrofitInstance
 import com.carmarket.repository.AdDetailsRepository
 import com.carmarket.repository.AllAdsRepository
+import com.carmarket.repository.CreateAdRepository
 import com.carmarket.repository.UserRepository
 import com.carmarket.ui.adDetails.AdDetailsViewModel
 import com.carmarket.ui.allAds.AllAdsViewModel
+import com.carmarket.ui.createAd.CreateAdViewModel
 import com.carmarket.ui.login.LoginViewModel
 import com.carmarket.ui.registration.RegistrationViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
@@ -17,6 +19,7 @@ val viewModule = module {
     viewModel { AdDetailsViewModel(get()) }
     viewModel { RegistrationViewModel(get()) }
     viewModel { LoginViewModel(get()) }
+    viewModel { CreateAdViewModel(get()) }
 }
 
 val networkModule = module {
@@ -27,4 +30,5 @@ val repositoryModule = module {
     single { AllAdsRepository(get()) }
     single { AdDetailsRepository(get()) }
     single { UserRepository(get()) }
+    single { CreateAdRepository(get()) }
 }

@@ -1,5 +1,6 @@
 package com.carmarket.ui.allAds
 
+import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -125,6 +126,7 @@ class AllAdsFragment : Fragment() {
     }
 
     private fun allAds() {
+        val accessToken = getAccessToken()
         lifecycleScope.launch {
             viewModel.adUiDataState.collect { state ->
                 when (state) {
@@ -143,6 +145,11 @@ class AllAdsFragment : Fragment() {
                 }
             }
         }
+    }
+
+    private fun getAccessToken(): String {
+        val sharedPreferences = requireContext().getSharedPreferences("com.carmarket", Context.MODE_PRIVATE)
+        return sharedPreferences.getString("accessToken", "") ?: ""
     }
 
     override fun onDestroyView() {

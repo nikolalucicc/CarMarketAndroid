@@ -1,5 +1,6 @@
 package com.carmarket.ui
 
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -61,15 +62,27 @@ class MainActivity : AppCompatActivity() {
                     drawerLayout.closeDrawer(GravityCompat.START)
                     true
                 }
-//
-//                R.id.nav_about_creator -> {
-//                    navController.navigate(R.id.aboutCreatorFragment)
-//                    drawerLayout.closeDrawer(GravityCompat.START)
-//                    true
-//                }
+
+                R.id.nav_create_ad -> {
+                    val accessToken = getAccessToken()
+
+                    val bundle = Bundle().apply {
+                        putString("accessToken", accessToken)
+                    }
+
+                    navController.navigate(R.id.createAdFragment, bundle)
+                    drawerLayout.closeDrawer(GravityCompat.START)
+                    true
+                }
 
                 else -> false
             }
         }
     }
+
+    private fun getAccessToken(): String {
+        val sharedPreferences = applicationContext.getSharedPreferences("com.carmarket", Context.MODE_PRIVATE)
+        return sharedPreferences.getString("accessToken", "") ?: ""
+    }
+
 }

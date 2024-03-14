@@ -40,4 +40,9 @@
             android:id="@+id/action_loginFragment_to_registrationFragment"
             app:destination="@id/registrationFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/createAdFragment"
+        android:name="com.carmarket.ui.createAd.CreateAdFragment"
+        android:label="fragment_create_ad"
+        tools:layout="@layout/fragment_create_ad" />
 </navigation>

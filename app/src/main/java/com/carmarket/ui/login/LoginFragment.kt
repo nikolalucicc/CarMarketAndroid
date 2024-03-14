@@ -10,20 +10,27 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.carmarket.R
 import com.carmarket.databinding.FragmentLoginBinding
 import com.carmarket.model.request.LoginRequest
 import com.carmarket.stateClasses.LoginUIState
-import com.carmarket.ui.allAds.AllAdsFragment
 import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
+import android.content.Context
+import android.content.SharedPreferences
 
 class LoginFragment : Fragment() {
 
     private var binding: FragmentLoginBinding? = null
     private val viewModel: LoginViewModel by sharedViewModel()
+
+    private val _accessToken = MutableLiveData<String>()
+    val accessToken: LiveData<String>
+        get() = _accessToken
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -42,37 +49,50 @@ class LoginFragment : Fragment() {
             val password = binding?.passwordLoginEditText?.text.toString()
 
             if (username.isNotEmpty() && password.isNotEmpty()) {
-                val loginRequest = LoginRequest(username, password)
-                viewModel.login(loginRequest)
+                login()
             } else {
                 Toast.makeText(requireContext(), "Molimo unesite korisničko ime i lozinku", Toast.LENGTH_SHORT).show()
             }
         }
-
-        login()
     }
 
     private fun login() {
-        lifecycleScope.launch {
-            viewModel.loginUiDataState.collect { state ->
-                when (state) {
-                    is LoginUIState.Loading -> {
-                        hideKeyboard()
-                    }
+        val username = binding?.usernameLoginEditText?.text.toString()
+        val password = binding?.passwordLoginEditText?.text.toString()
 
-                    is LoginUIState.Success -> {
-                        val response = state.response
-                        Toast.makeText(requireContext(), "Uspešno ste se prijavili", Toast.LENGTH_SHORT).show()
-                        navigateToNextScreen(response.accessToken, response.expiresIn)
-                        Log.d("Token", response.accessToken)
-                    }
+        if (username.isNotEmpty() && password.isNotEmpty()) {
+            viewModel.login(LoginRequest(username, password))
 
-                    is LoginUIState.Error -> {
-                        displayErrorDialog("Pogresni kredencijali")
+            lifecycleScope.launch {
+                viewModel.loginUiDataState.collect { state ->
+                    when (state) {
+                        is LoginUIState.Loading -> {
+                            hideKeyboard()
+                        }
+
+                        is LoginUIState.Success -> {
+                            val response = state.response
+                            _accessToken.value = response.accessToken
+                            saveAccessTokenToSharedPreferences(response.accessToken)
+                            Toast.makeText(requireContext(), "Uspešno ste se prijavili", Toast.LENGTH_SHORT).show()
+                            navigateToNextScreen(response.accessToken, response.expiresIn)
+                            Log.d("Token", response.accessToken)
+                        }
+
+                        is LoginUIState.Error -> {
+                            displayErrorDialog("Pogresni kredencijali")
+                        }
                     }
                 }
             }
+        } else {
+            Toast.makeText(requireContext(), "Molimo unesite korisničko ime i lozinku", Toast.LENGTH_SHORT).show()
         }
+    }
+
+    private fun saveAccessTokenToSharedPreferences(accessToken: String) {
+        val sharedPreferences = requireContext().getSharedPreferences("com.carmarket", Context.MODE_PRIVATE)
+        sharedPreferences.edit().putString("accessToken", accessToken).apply()
     }
 
     private fun hideKeyboard() {
@@ -106,6 +126,10 @@ class LoginFragment : Fragment() {
                 dialog.dismiss()
             }
             .show()
+    }
+
+    fun getAccessToken(): String {
+        return _accessToken.value ?: ""
     }
 
     override fun onDestroyView() {

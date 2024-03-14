@@ -5,7 +5,6 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
@@ -13,8 +12,7 @@ import androidx.viewpager2.widget.ViewPager2
 import com.carmarket.R
 import com.carmarket.databinding.FragmentAdDetailsBinding
 import com.carmarket.model.responseBody.AdResponseBody
-import com.carmarket.stateClasses.AdDetailsUIState
-import kotlinx.coroutines.flow.collect
+import com.carmarket.stateClasses.OneAdUIState
 import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
@@ -50,16 +48,16 @@ class AdDetailsFragment : Fragment() {
         lifecycleScope.launch {
             viewModel.adDetailsDataState.collect { state ->
                 when (state) {
-                    is AdDetailsUIState.Loading -> binding?.adDetailsProgressBar?.visibility = View.VISIBLE
+                    is OneAdUIState.Loading -> binding?.adDetailsProgressBar?.visibility = View.VISIBLE
 
-                    is AdDetailsUIState.Success -> {
+                    is OneAdUIState.Success -> {
                         binding?.adDetailsProgressBar?.visibility = View.GONE
                         val ad = state.ad
                         binding?.render(ad)
                         Log.d("id", ad.id.toString())
                     }
 
-                    is AdDetailsUIState.Error -> {
+                    is OneAdUIState.Error -> {
                         Log.d("Error", state.message)
                         showErrorDialog()
                     }
