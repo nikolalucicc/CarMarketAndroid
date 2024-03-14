@@ -1,5 +1,6 @@
 package com.carmarket.network
 
+import com.carmarket.model.request.AdRequest
 import com.carmarket.model.request.LoginRequest
 import com.carmarket.model.request.UserRequest
 import com.carmarket.model.responseBody.AdResponseBody
@@ -8,6 +9,7 @@ import com.carmarket.model.responseBody.UserResponseBody
 import retrofit2.Response
 import retrofit2.http.Body
 import retrofit2.http.GET
+import retrofit2.http.Header
 import retrofit2.http.POST
 import retrofit2.http.Path
 
@@ -48,4 +50,7 @@ interface CarMarketApi {
 
     @POST("/auth/login")
     suspend fun login(@Body loginRequest: LoginRequest): Response<LoginResponseBody>
+
+    @POST("/ad/createAd")
+    suspend fun createAd(@Body adRequest: AdRequest, @Header("Authorization") bearerToken: String): Response<AdResponseBody>
 }
