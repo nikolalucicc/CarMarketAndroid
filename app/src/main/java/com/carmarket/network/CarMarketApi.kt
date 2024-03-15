@@ -56,4 +56,7 @@ interface CarMarketApi {
 
     @GET("/ad/adsByUser/{id}")
     suspend fun getAdsByUser(@Path("id") id: Long, @Header("Authorization") bearerToken: String) : Response<List<AdResponseBody>>
+
+    @GET("/auth/{username}")
+    suspend fun getUserDetails(@Path("username") username: String) : Response<UserResponseBody>
 }

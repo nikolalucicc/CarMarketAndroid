@@ -57,4 +57,9 @@
             android:id="@+id/action_adsByUserFragment_to_adDetailsFragment"
             app:destination="@id/adDetailsFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/userProfileFragment"
+        android:name="com.carmarket.ui.userProfile.UserProfileFragment"
+        android:label="fragment_user_profile"
+        tools:layout="@layout/fragment_user_profile" />
 </navigation>
