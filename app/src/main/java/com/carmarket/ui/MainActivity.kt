@@ -88,6 +88,18 @@ class MainActivity : AppCompatActivity() {
                     true
                 }
 
+                R.id.nav_profile -> {
+                    val accessToken = getAccessToken()
+
+                    val bundle = Bundle().apply {
+                        putString("accessToken", accessToken)
+                    }
+
+                    navController.navigate(R.id.userProfileFragment, bundle)
+                    drawerLayout.closeDrawer(GravityCompat.START)
+                    true
+                }
+
                 else -> false
             }
         }

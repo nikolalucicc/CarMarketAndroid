@@ -42,6 +42,10 @@
     <string name="interiorColorTextView">Boja enterijera</string>
     <string name="registeredUntilTextView">Registrovan do</string>
     <string name="phoneNumberTextView">Broj telefona</string>
+    <string name="firstNameTextView">Ime: %s</string>
+    <string name="lastNameTextView">Prezime: %s</string>
+    <string name="emailTextView">Email: %s</string>
+    <string name="usernameTextView">Username: %s</string>
 
     <string name="km">%1$d km</string>
     <string name="year">%1$d. godina</string>
@@ -84,6 +88,7 @@
     <string name="createAdTitle">Kreiranje oglasa</string>
     <string name="addImage">Dodaj sliku</string>
     <string name="carBodyHint">Tip karoserije</string>
+    <string name="changeUserData">Izmenite podatke</string>
 
     <string-array name="brands">
         <item>Acura</item>

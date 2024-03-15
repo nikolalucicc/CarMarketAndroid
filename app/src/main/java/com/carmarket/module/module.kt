@@ -13,6 +13,7 @@ import com.carmarket.ui.allAds.AllAdsViewModel
 import com.carmarket.ui.createAd.CreateAdViewModel
 import com.carmarket.ui.login.LoginViewModel
 import com.carmarket.ui.registration.RegistrationViewModel
+import com.carmarket.ui.userProfile.UserProfileViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
@@ -23,6 +24,7 @@ val viewModule = module {
     viewModel { LoginViewModel(get()) }
     viewModel { CreateAdViewModel(get()) }
     viewModel { AdsByUserViewModel(get()) }
+    viewModel { UserProfileViewModel(get()) }
 }
 
 val networkModule = module {
