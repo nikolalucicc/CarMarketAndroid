@@ -3,10 +3,12 @@ package com.carmarket.module
 import com.carmarket.network.CarMarketApi
 import com.carmarket.network.RetrofitInstance
 import com.carmarket.repository.AdDetailsRepository
+import com.carmarket.repository.AdsByUserRepository
 import com.carmarket.repository.AllAdsRepository
 import com.carmarket.repository.CreateAdRepository
 import com.carmarket.repository.UserRepository
 import com.carmarket.ui.adDetails.AdDetailsViewModel
+import com.carmarket.ui.adsByUser.AdsByUserViewModel
 import com.carmarket.ui.allAds.AllAdsViewModel
 import com.carmarket.ui.createAd.CreateAdViewModel
 import com.carmarket.ui.login.LoginViewModel
@@ -20,6 +22,7 @@ val viewModule = module {
     viewModel { RegistrationViewModel(get()) }
     viewModel { LoginViewModel(get()) }
     viewModel { CreateAdViewModel(get()) }
+    viewModel { AdsByUserViewModel(get()) }
 }
 
 val networkModule = module {
@@ -31,4 +34,5 @@ val repositoryModule = module {
     single { AdDetailsRepository(get()) }
     single { UserRepository(get()) }
     single { CreateAdRepository(get()) }
+    single { AdsByUserRepository(get()) }
 }

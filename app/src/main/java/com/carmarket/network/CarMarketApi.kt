@@ -53,4 +53,7 @@ interface CarMarketApi {
 
     @POST("/ad/createAd")
     suspend fun createAd(@Body adRequest: AdRequest, @Header("Authorization") bearerToken: String): Response<AdResponseBody>
+
+    @GET("/ad/adsByUser/{id}")
+    suspend fun getAdsByUser(@Path("id") id: Long, @Header("Authorization") bearerToken: String) : Response<List<AdResponseBody>>
 }

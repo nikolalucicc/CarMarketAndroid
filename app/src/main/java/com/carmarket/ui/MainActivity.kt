@@ -3,6 +3,7 @@ package com.carmarket.ui
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.core.view.GravityCompat
 import androidx.navigation.NavController
@@ -75,6 +76,18 @@ class MainActivity : AppCompatActivity() {
                     true
                 }
 
+                R.id.nav_users_ads -> {
+                    val accessToken = getAccessToken()
+
+                    val bundle = Bundle().apply {
+                        putString("accessToken", accessToken)
+                    }
+
+                    navController.navigate(R.id.adsByUserFragment, bundle)
+                    drawerLayout.closeDrawer(GravityCompat.START)
+                    true
+                }
+
                 else -> false
             }
         }
@@ -82,7 +95,11 @@ class MainActivity : AppCompatActivity() {
 
     private fun getAccessToken(): String {
         val sharedPreferences = applicationContext.getSharedPreferences("com.carmarket", Context.MODE_PRIVATE)
-        return sharedPreferences.getString("accessToken", "") ?: ""
+        val accessToken = sharedPreferences.getString("accessToken", "")
+        if (accessToken.isNullOrEmpty()) {
+            Log.e("MainActivity", "Access token not found in shared preferences.")
+        }
+        return accessToken ?: ""
     }
 
 }
