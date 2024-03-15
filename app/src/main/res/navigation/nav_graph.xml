@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_allAdsFragment_to_adDetailsFragment"
             app:destination="@id/adDetailsFragment"/>
+        <action
+            android:id="@+id/action_allAdsFragment_to_adsByUserFragment"
+            app:destination="@id/adsByUserFragment" />
     </fragment>
     <fragment
         android:id="@+id/adDetailsFragment"
@@ -45,4 +48,13 @@
         android:name="com.carmarket.ui.createAd.CreateAdFragment"
         android:label="fragment_create_ad"
         tools:layout="@layout/fragment_create_ad" />
+    <fragment
+        android:id="@+id/adsByUserFragment"
+        android:name="com.carmarket.ui.adsByUser.AdsByUserFragment"
+        android:label="fragment_ads_by_user"
+        tools:layout="@layout/fragment_ads_by_user" >
+        <action
+            android:id="@+id/action_adsByUserFragment_to_adDetailsFragment"
+            app:destination="@id/adDetailsFragment" />
+    </fragment>
 </navigation>

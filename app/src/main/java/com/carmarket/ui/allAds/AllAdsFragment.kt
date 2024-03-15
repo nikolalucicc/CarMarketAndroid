@@ -36,7 +36,7 @@ class AllAdsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val recyclerView = binding?.airPollutionRecyclerView
+        val recyclerView = binding?.allAdsRecyclerView
 
         recyclerView?.apply {
             layoutManager = LinearLayoutManager(context)

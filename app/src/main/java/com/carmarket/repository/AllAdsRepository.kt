@@ -4,7 +4,7 @@ import com.carmarket.model.responseBody.AdResponseBody
 import com.carmarket.network.CarMarketApi
 
 class AllAdsRepository(
-    private var api: CarMarketApi,
+    private var api: CarMarketApi
 ) {
     suspend fun getAllAds(): List<AdResponseBody> =
         api.runCatching {
