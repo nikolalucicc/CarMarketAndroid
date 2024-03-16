@@ -61,5 +61,14 @@
         android:id="@+id/userProfileFragment"
         android:name="com.carmarket.ui.userProfile.UserProfileFragment"
         android:label="fragment_user_profile"
-        tools:layout="@layout/fragment_user_profile" />
+        tools:layout="@layout/fragment_user_profile" >
+        <action
+            android:id="@+id/action_userProfileFragment_to_changeUserFragment"
+            app:destination="@id/changeUserFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/changeUserFragment"
+        android:name="com.carmarket.ui.changeUser.ChangeUserFragment"
+        android:label="fragment_change_user"
+        tools:layout="@layout/fragment_change_user" />
 </navigation>

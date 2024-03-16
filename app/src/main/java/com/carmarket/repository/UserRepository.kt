@@ -30,4 +30,9 @@ class UserRepository(
             requireNotNull(it.body()) { "The response body is null." }
         }.getOrThrow()
 
+    suspend fun updateUser(userRequest: UserRequest, username: String, bearerToken: String) =
+        api.run {
+            updateUser(userRequest, username, bearerToken)
+        }
+
 }
