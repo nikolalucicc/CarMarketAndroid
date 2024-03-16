@@ -10,6 +10,7 @@ import com.carmarket.repository.UserRepository
 import com.carmarket.ui.adDetails.AdDetailsViewModel
 import com.carmarket.ui.adsByUser.AdsByUserViewModel
 import com.carmarket.ui.allAds.AllAdsViewModel
+import com.carmarket.ui.changeUser.ChangeUserViewModel
 import com.carmarket.ui.createAd.CreateAdViewModel
 import com.carmarket.ui.login.LoginViewModel
 import com.carmarket.ui.registration.RegistrationViewModel
@@ -25,6 +26,7 @@ val viewModule = module {
     viewModel { CreateAdViewModel(get()) }
     viewModel { AdsByUserViewModel(get()) }
     viewModel { UserProfileViewModel(get()) }
+    viewModel { ChangeUserViewModel(get()) }
 }
 
 val networkModule = module {

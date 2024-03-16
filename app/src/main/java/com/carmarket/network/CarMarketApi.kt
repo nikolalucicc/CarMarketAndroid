@@ -11,6 +11,7 @@ import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.Header
 import retrofit2.http.POST
+import retrofit2.http.PUT
 import retrofit2.http.Path
 
 interface CarMarketApi {
@@ -59,4 +60,7 @@ interface CarMarketApi {
 
     @GET("/auth/{username}")
     suspend fun getUserDetails(@Path("username") username: String) : Response<UserResponseBody>
+
+    @PUT("/auth/update/{username}")
+    suspend fun updateUser(@Body userRequest: UserRequest, @Path("username") username: String, @Header("Authorization") bearerToken: String)
 }
