@@ -10,7 +10,6 @@ import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import com.carmarket.R
 import com.carmarket.databinding.ActivityMainBinding
-import com.carmarket.ui.allAds.AllAdsFragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -36,6 +35,15 @@ class MainActivity : AppCompatActivity() {
             } else {
                 binding?.toolbar?.sortSpinner?.visibility = View.GONE
             }
+        }
+
+        navController.addOnDestinationChangedListener { _, destination, _ ->
+            if (destination.id == R.id.adDetailsFragment) {
+                binding?.toolbar?.followAdButton?.visibility = View.VISIBLE
+            } else {
+                binding?.toolbar?.followAdButton?.visibility = View.GONE
+            }
+
         }
 
     }
@@ -96,6 +104,18 @@ class MainActivity : AppCompatActivity() {
                     }
 
                     navController.navigate(R.id.userProfileFragment, bundle)
+                    drawerLayout.closeDrawer(GravityCompat.START)
+                    true
+                }
+
+                R.id.nav_following_ads -> {
+                    val accessToken = getAccessToken()
+
+                    val bundle = Bundle().apply {
+                        putString("accessToken", accessToken)
+                    }
+
+                    navController.navigate(R.id.followAdFragment, bundle)
                     drawerLayout.closeDrawer(GravityCompat.START)
                     true
                 }

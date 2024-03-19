@@ -5,22 +5,27 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageButton
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
-import androidx.viewpager2.widget.ViewPager2
 import com.carmarket.R
 import com.carmarket.databinding.FragmentAdDetailsBinding
+import com.carmarket.model.request.FollowAdRequest
 import com.carmarket.model.responseBody.AdResponseBody
+import com.carmarket.stateClasses.FollowAdUIState
 import com.carmarket.stateClasses.OneAdUIState
+import com.carmarket.ui.followAd.FollowAdViewModel
 import kotlinx.coroutines.launch
+import org.json.JSONObject
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
 class AdDetailsFragment : Fragment() {
 
     private var binding: FragmentAdDetailsBinding? = null
     private val viewModel: AdDetailsViewModel by sharedViewModel()
-    private var imageViewPager: ViewPager2? = null
+    private val followAdViewModel: FollowAdViewModel by sharedViewModel()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -30,18 +35,81 @@ class AdDetailsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        imageViewPager = binding?.imageViewPager
-
         val adId = arguments?.getLong("adId") ?: -1
+        val followedAdId = arguments?.getLong("followedAdId") ?: -1
+
         if (adId != -1L) {
             lifecycleScope.launch {
                 viewModel.getAdDetails(adId)
             }
+
+            arguments?.getString("jwt")?.let { jwt ->
+                checkIfAdIsFollowed(adId, jwt)
+            }
         } else {
-            showErrorDialog()
+            showErrorDialog("Invalid token.")
+        }
+
+        requireActivity().findViewById<ImageButton>(R.id.followAdButton)?.setOnClickListener {
+            val jwt = arguments?.getString("jwt", "")
+            if (adId != -1L && !jwt.isNullOrEmpty()) {
+                lifecycleScope.launch {
+                    val isAdFollowed = followAdViewModel.isAdFollowed(adId, getUserIdFromJWT(jwt))
+
+                    if (isAdFollowed) {
+                        followAdViewModel.deleteFromFavorites(followedAdId, getUserIdFromJWT(jwt))
+                        Toast.makeText(requireContext(), "Oglas je uspešno otpraćen!", Toast.LENGTH_SHORT).show()
+                    } else {
+                        val followAdRequest = FollowAdRequest(getUserIdFromJWT(jwt), adId)
+                        followAdViewModel.followAd(followAdRequest, jwt)
+                        Toast.makeText(requireContext(), "Oglas je uspešno zapraćen!", Toast.LENGTH_SHORT).show()
+                    }
+
+                    updateFollowButtonState(!isAdFollowed)
+                }
+            }
         }
 
         adDetails()
+    }
+
+    private fun checkIfAdIsFollowed(adId: Long, jwt: String) {
+        val followAdViewModel: FollowAdViewModel by sharedViewModel()
+
+        lifecycleScope.launch {
+            followAdViewModel.followAdUiDataState.collect { state ->
+                when (state) {
+                    is FollowAdUIState.Success -> {
+                        val followedAds = state.followAd
+                        val isAdFollowed = followedAds.any { it.ad.id == adId }
+                        updateFollowButtonState(isAdFollowed)
+                    }
+                    is FollowAdUIState.Error -> {
+                        Log.d("FollowAdFragment", "Error: ${state.message}")
+                    }
+                    else -> {
+                        // Ignore other states
+                    }
+                }
+            }
+        }
+
+        val id = getUserIdFromJWT(jwt)
+        if (id != null) {
+            followAdViewModel.getFollowingAds(id.toLong(), jwt)
+        } else {
+            showErrorDialog("Invalid token.")
+        }
+    }
+
+    private fun updateFollowButtonState(isAdFollowed: Boolean) {
+        val followAdButton = requireActivity().findViewById<ImageButton>(R.id.followAdButton)
+        val followedImageResource = if (isAdFollowed) {
+            R.drawable.baseline_favorite_24
+        } else {
+            R.drawable.baseline_favorite_border_24
+        }
+        followAdButton.setImageResource(followedImageResource)
     }
 
     private fun adDetails() {
@@ -59,14 +127,25 @@ class AdDetailsFragment : Fragment() {
 
                     is OneAdUIState.Error -> {
                         Log.d("Error", state.message)
-                        showErrorDialog()
+                        showErrorDialog("Invalid token.")
                     }
                 }
             }
         }
     }
 
-    private fun showErrorDialog() {
+    private fun getUserIdFromJWT(jwt: String): String {
+        val parts = jwt.split(".")
+        if (parts.size == 3) {
+            val decodedPayload = android.util.Base64.decode(parts[1], android.util.Base64.DEFAULT)
+            val payload = String(decodedPayload)
+            val jsonObject = JSONObject(payload)
+            return jsonObject.optString("id", "")
+        }
+        return ""
+    }
+
+    private fun showErrorDialog(s: String) {
         val alertDialogBuilder = AlertDialog.Builder(requireContext())
         alertDialogBuilder.apply {
             setTitle(R.string.error)
@@ -84,6 +163,7 @@ class AdDetailsFragment : Fragment() {
     }
 
     private fun FragmentAdDetailsBinding.render(data: AdResponseBody) {
+        adIdTextView.text = data.id.toString()
         adDetailBrandTextView.text = data.brand
         adDetailModelTextView.text = data.model
         adDetailYearTextView.text = getString(R.string.year, data.year)
@@ -112,6 +192,5 @@ class AdDetailsFragment : Fragment() {
         val adapter = ImagePagerAdapter(imageUrls)
         imageViewPager.adapter = adapter
     }
-
 
 }

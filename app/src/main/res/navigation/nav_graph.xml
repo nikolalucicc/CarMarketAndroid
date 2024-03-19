@@ -71,4 +71,13 @@
         android:name="com.carmarket.ui.changeUser.ChangeUserFragment"
         android:label="fragment_change_user"
         tools:layout="@layout/fragment_change_user" />
+    <fragment
+        android:id="@+id/followAdFragment"
+        android:name="com.carmarket.ui.followAd.FollowAdFragment"
+        android:label="fragment_follow_ad"
+        tools:layout="@layout/fragment_follow_ad" >
+        <action
+            android:id="@+id/action_followAdFragment_to_adDetailsFragment"
+            app:destination="@id/adDetailsFragment" />
+    </fragment>
 </navigation>

@@ -1,13 +1,16 @@
 package com.carmarket.network
 
 import com.carmarket.model.request.AdRequest
+import com.carmarket.model.request.FollowAdRequest
 import com.carmarket.model.request.LoginRequest
 import com.carmarket.model.request.UserRequest
 import com.carmarket.model.responseBody.AdResponseBody
+import com.carmarket.model.responseBody.FollowAdResponseBody
 import com.carmarket.model.responseBody.LoginResponseBody
 import com.carmarket.model.responseBody.UserResponseBody
 import retrofit2.Response
 import retrofit2.http.Body
+import retrofit2.http.DELETE
 import retrofit2.http.GET
 import retrofit2.http.Header
 import retrofit2.http.POST
@@ -63,4 +66,13 @@ interface CarMarketApi {
 
     @PUT("/auth/update/{username}")
     suspend fun updateUser(@Body userRequest: UserRequest, @Path("username") username: String, @Header("Authorization") bearerToken: String)
+
+    @POST("/favorite/save")
+    suspend fun followAd(@Body followAdRequest: FollowAdRequest, @Header("Authorization") bearerToken: String) : Response<FollowAdResponseBody>
+
+    @GET("/favorite/favoriteByUser/{id}")
+    suspend fun getFollowingAds(@Path("id") id: Long, @Header("Authorization") bearerToken: String) : Response<List<FollowAdResponseBody>>
+
+    @DELETE("/favorite/delete/{id}")
+    suspend fun deleteFromFavorites(@Path("id") id: Long, @Header("Authorization") bearerToken: String)
 }
