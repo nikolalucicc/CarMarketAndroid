@@ -46,6 +46,7 @@ class AllAdsFragment : Fragment() {
         adapter = AllAdsAdapter(emptyList()) { id ->
             val bundle = Bundle()
             bundle.putLong("adId", id)
+            bundle.putString("jwt", getAccessToken())
             findNavController().navigate(R.id.action_allAdsFragment_to_adDetailsFragment, bundle)
         }
         recyclerView?.adapter = adapter

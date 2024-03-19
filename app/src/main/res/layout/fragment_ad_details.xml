@@ -1,523 +1,533 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.adDetails.AdDetailsFragment"
-    android:layout_marginBottom="10dp">
+    android:layout_marginBottom="10dp"
+    tools:context=".ui.adDetails.AdDetailsFragment">
 
-   <androidx.constraintlayout.widget.ConstraintLayout
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-       <ProgressBar
-           android:id="@+id/adDetailsProgressBar"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:visibility="gone"
-           app:layout_constraintStart_toStartOf="parent"
-           app:layout_constraintBottom_toBottomOf="parent"
-           app:layout_constraintEnd_toEndOf="parent"
-           app:layout_constraintTop_toTopOf="parent"/>
+        <ProgressBar
+            android:id="@+id/adDetailsProgressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-       <androidx.viewpager2.widget.ViewPager2
-           android:id="@+id/imageViewPager"
-           android:layout_width="match_parent"
-           android:layout_height="300dp"
-           app:layout_constraintTop_toTopOf="parent"
-           app:layout_constraintStart_toStartOf="parent"
-           app:layout_constraintEnd_toEndOf="parent"
-           android:layout_marginTop="60dp"/>
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/imageViewPager"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_marginTop="60dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-       <TextView
-           android:id="@+id/generalInformationTextView"
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-           android:text="@string/generalInformationTextView"
-           android:layout_marginStart="20dp"
-           android:layout_marginEnd="20dp"
-           app:layout_constraintStart_toStartOf="parent"
-           app:layout_constraintEnd_toEndOf="parent"
-           app:layout_constraintTop_toBottomOf="@+id/adDetailPriceTextView"
-           android:layout_marginTop="10dp"
-           android:textStyle="bold"
-           android:textSize="18sp"/>
+        <TextView
+            android:id="@+id/generalInformationTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:text="@string/generalInformationTextView"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/adDetailPriceTextView" />
 
-       <TextView
-           android:id="@+id/adDetailBrandTextView"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           app:layout_constraintEnd_toEndOf="parent"
-           app:layout_constraintTop_toBottomOf="@+id/generalInformationTextView"
-           android:layout_marginEnd="20dp"
-           android:layout_marginTop="10dp"/>
+        <TextView
+            android:id="@+id/adIdTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/generalInformationTextView" />
 
-       <TextView
-           android:id="@+id/adDetailModelTextView"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           app:layout_constraintEnd_toEndOf="parent"
-           app:layout_constraintTop_toBottomOf="@id/adDetailBrandTextView"
-           android:layout_marginEnd="20dp"
-           android:layout_marginTop="5dp"/>
+        <TextView
+            android:id="@+id/adDetailBrandTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/adIdTextView" />
 
-       <TextView
-           android:id="@+id/adDetailYearTextView"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           app:layout_constraintEnd_toEndOf="parent"
-           app:layout_constraintTop_toBottomOf="@id/adDetailModelTextView"
-           android:layout_marginEnd="20dp"
-           android:layout_marginTop="5dp"/>
+        <TextView
+            android:id="@+id/adDetailModelTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/adDetailBrandTextView" />
 
-       <TextView
-           android:id="@+id/adDetailPriceTextView"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           app:layout_constraintTop_toBottomOf="@id/imageViewPager"
-           app:layout_constraintStart_toEndOf="@+id/priceTextView"
-           app:layout_constraintEnd_toEndOf="parent"
-           android:textSize="18sp"
-           android:textStyle="bold"/>
+        <TextView
+            android:id="@+id/adDetailYearTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/adDetailModelTextView" />
 
-       <TextView
-           android:id="@+id/priceTextView"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           app:layout_constraintTop_toBottomOf="@id/imageViewPager"
-           app:layout_constraintStart_toStartOf="parent"
-           app:layout_constraintEnd_toStartOf="@id/adDetailPriceTextView"
-           android:textSize="18sp"
-           android:textStyle="bold"
-           android:text="@string/priceTextView"
-           app:layout_constraintHorizontal_chainStyle="packed"
-           app:layout_constraintHorizontal_bias="0.5" />
+        <TextView
+            android:id="@+id/adDetailPriceTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/priceTextView"
+            app:layout_constraintTop_toBottomOf="@id/imageViewPager" />
+
+        <TextView
+            android:id="@+id/priceTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/priceTextView"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@id/adDetailPriceTextView"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imageViewPager" />
 
 
-       <TextView
-           android:id="@+id/adDetailConditionTextView"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           app:layout_constraintEnd_toEndOf="parent"
-           app:layout_constraintTop_toBottomOf="@id/adDetailYearTextView"
-           android:layout_marginEnd="20dp"
-           android:layout_marginTop="5dp"/>
+        <TextView
+            android:id="@+id/adDetailConditionTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/adDetailYearTextView" />
 
-       <TextView
-           android:id="@+id/additionalInfoTextView"
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-           android:text="@string/additionalInfoTextView"
-           android:layout_marginStart="20dp"
-           android:layout_marginEnd="20dp"
-           app:layout_constraintStart_toStartOf="parent"
-           app:layout_constraintEnd_toEndOf="parent"
-           app:layout_constraintTop_toBottomOf="@+id/adDetailConditionTextView"
-           android:layout_marginTop="15dp"
-           android:textStyle="bold"
-           android:textSize="18sp"/>
+        <TextView
+            android:id="@+id/additionalInfoTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="20dp"
+            android:text="@string/additionalInfoTextView"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/adDetailConditionTextView" />
 
-       <TextView
-           android:id="@+id/adDetailMileageTextView"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           app:layout_constraintEnd_toEndOf="parent"
-           app:layout_constraintTop_toBottomOf="@id/additionalInfoTextView"
-           android:layout_marginEnd="20dp"
-           android:layout_marginTop="5dp"/>
+        <TextView
+            android:id="@+id/adDetailMileageTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/additionalInfoTextView" />
 
-       <TextView
-           android:id="@+id/adFuelDetailTextView"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           app:layout_constraintEnd_toEndOf="parent"
-           app:layout_constraintTop_toBottomOf="@id/adDetailMileageTextView"
-           android:layout_marginEnd="20dp"
-           android:layout_marginTop="5dp"/>
+        <TextView
+            android:id="@+id/adFuelDetailTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/adDetailMileageTextView" />
 
-       <TextView
-           android:id="@+id/adHpDetailTextView"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           app:layout_constraintEnd_toEndOf="parent"
-           app:layout_constraintTop_toBottomOf="@id/adFuelDetailTextView"
-           android:layout_marginEnd="20dp"
-           android:layout_marginTop="5dp"/>
+        <TextView
+            android:id="@+id/adHpDetailTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/adFuelDetailTextView" />
 
-       <TextView
-           android:id="@+id/adKwDetailTextView"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           app:layout_constraintEnd_toEndOf="parent"
-           app:layout_constraintTop_toBottomOf="@id/adHpDetailTextView"
-           android:layout_marginEnd="20dp"
-           android:layout_marginTop="5dp"/>
+        <TextView
+            android:id="@+id/adKwDetailTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/adHpDetailTextView" />
 
-       <TextView
-           android:id="@+id/adCubicDetailTextView"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           app:layout_constraintEnd_toEndOf="parent"
-           app:layout_constraintTop_toBottomOf="@id/adKwDetailTextView"
-           android:layout_marginEnd="20dp"
-           android:layout_marginTop="5dp"/>
+        <TextView
+            android:id="@+id/adCubicDetailTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/adKwDetailTextView" />
 
-       <TextView
-           android:id="@+id/adTransmissionDetailTextView"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           app:layout_constraintEnd_toEndOf="parent"
-           app:layout_constraintTop_toBottomOf="@id/adCubicDetailTextView"
-           android:layout_marginEnd="20dp"
-           android:layout_marginTop="5dp"/>
+        <TextView
+            android:id="@+id/adTransmissionDetailTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/adCubicDetailTextView" />
 
-       <TextView
-           android:id="@+id/adDriveDetailTextView"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           app:layout_constraintEnd_toEndOf="parent"
-           app:layout_constraintTop_toBottomOf="@id/adTransmissionDetailTextView"
-           android:layout_marginEnd="20dp"
-           android:layout_marginTop="5dp"/>
+        <TextView
+            android:id="@+id/adDriveDetailTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/adTransmissionDetailTextView" />
 
-       <TextView
-           android:id="@+id/adDoorNumberDetailTextView"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           app:layout_constraintEnd_toEndOf="parent"
-           app:layout_constraintTop_toBottomOf="@id/adDriveDetailTextView"
-           android:layout_marginEnd="20dp"
-           android:layout_marginTop="5dp"/>
+        <TextView
+            android:id="@+id/adDoorNumberDetailTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/adDriveDetailTextView" />
 
-       <TextView
-           android:id="@+id/adSeatsNumberDetailTextView"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           app:layout_constraintEnd_toEndOf="parent"
-           app:layout_constraintTop_toBottomOf="@id/adDoorNumberDetailTextView"
-           android:layout_marginEnd="20dp"
-           android:layout_marginTop="5dp"/>
+        <TextView
+            android:id="@+id/adSeatsNumberDetailTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/adDoorNumberDetailTextView" />
 
-       <TextView
-           android:id="@+id/adWheelSideDetailTextView"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           app:layout_constraintEnd_toEndOf="parent"
-           app:layout_constraintTop_toBottomOf="@id/adSeatsNumberDetailTextView"
-           android:layout_marginEnd="20dp"
-           android:layout_marginTop="5dp"/>
+        <TextView
+            android:id="@+id/adWheelSideDetailTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/adSeatsNumberDetailTextView" />
 
-       <TextView
-           android:id="@+id/adAirConditioningDetailTextView"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           app:layout_constraintEnd_toEndOf="parent"
-           app:layout_constraintTop_toBottomOf="@id/adWheelSideDetailTextView"
-           android:layout_marginEnd="20dp"
-           android:layout_marginTop="5dp"/>
+        <TextView
+            android:id="@+id/adAirConditioningDetailTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/adWheelSideDetailTextView" />
 
-       <TextView
-           android:id="@+id/adColorDetailTextView"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           app:layout_constraintEnd_toEndOf="parent"
-           app:layout_constraintTop_toBottomOf="@id/adAirConditioningDetailTextView"
-           android:layout_marginEnd="20dp"
-           android:layout_marginTop="5dp"/>
+        <TextView
+            android:id="@+id/adColorDetailTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/adAirConditioningDetailTextView" />
 
-       <TextView
-           android:id="@+id/adInteriorColorDetailTextView"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           app:layout_constraintEnd_toEndOf="parent"
-           app:layout_constraintTop_toBottomOf="@id/adColorDetailTextView"
-           android:layout_marginEnd="20dp"
-           android:layout_marginTop="5dp"/>
+        <TextView
+            android:id="@+id/adInteriorColorDetailTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/adColorDetailTextView" />
 
-       <TextView
-           android:id="@+id/adRegisteredUntilDetailTextView"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           app:layout_constraintEnd_toEndOf="parent"
-           app:layout_constraintTop_toBottomOf="@id/adInteriorColorDetailTextView"
-           android:layout_marginEnd="20dp"
-           android:layout_marginTop="5dp"/>
+        <TextView
+            android:id="@+id/adRegisteredUntilDetailTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/adInteriorColorDetailTextView" />
 
-       <TextView
-           android:id="@+id/adCityDetailTextView"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           app:layout_constraintEnd_toEndOf="parent"
-           app:layout_constraintTop_toBottomOf="@id/locationTextView"
-           android:layout_marginEnd="20dp"
-           android:layout_marginTop="10dp"/>
+        <TextView
+            android:id="@+id/adCityDetailTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/locationTextView" />
 
-       <TextView
-           android:id="@+id/adCountryDetailTextView"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           app:layout_constraintEnd_toEndOf="parent"
-           app:layout_constraintTop_toBottomOf="@id/adCityDetailTextView"
-           android:layout_marginEnd="20dp"
-           android:layout_marginTop="5dp"/>
+        <TextView
+            android:id="@+id/adCountryDetailTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/adCityDetailTextView" />
 
-       <TextView
-           android:id="@+id/adTelephoneNumberDetailTextView"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           app:layout_constraintEnd_toEndOf="parent"
-           app:layout_constraintTop_toBottomOf="@id/adCountryDetailTextView"
-           android:layout_marginEnd="20dp"
-           android:layout_marginTop="5dp"/>
+        <TextView
+            android:id="@+id/adTelephoneNumberDetailTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/adCountryDetailTextView" />
 
-       <TextView
-           android:id="@+id/brandTextView"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           app:layout_constraintStart_toStartOf="parent"
-           android:layout_marginTop="10dp"
-           android:text="@string/brandTextView"
-           android:layout_marginStart="20dp"
-           app:layout_constraintTop_toBottomOf="@+id/generalInformationTextView"/>
+        <TextView
+            android:id="@+id/brandTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/brandTextView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/adIdTextView" />
 
-       <TextView
-           android:id="@+id/modelTextView"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           app:layout_constraintStart_toStartOf="parent"
-           app:layout_constraintTop_toBottomOf="@id/brandTextView"
-           android:text="@string/modelTextView"
-           android:layout_marginStart="20dp"
-           android:layout_marginTop="5dp"/>
+        <TextView
+            android:id="@+id/modelTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:text="@string/modelTextView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/brandTextView" />
 
-       <TextView
-           android:id="@+id/yearTextView"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           app:layout_constraintStart_toStartOf="parent"
-           app:layout_constraintTop_toBottomOf="@id/modelTextView"
-           android:text="@string/yearTextView"
-           android:layout_marginStart="20dp"
-           android:layout_marginTop="5dp"/>
+        <TextView
+            android:id="@+id/yearTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:text="@string/yearTextView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/modelTextView" />
 
-       <TextView
-           android:id="@+id/conditionTextView"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           app:layout_constraintStart_toStartOf="parent"
-           app:layout_constraintTop_toBottomOf="@id/yearTextView"
-           android:text="@string/conditionTextView"
-           android:layout_marginStart="20dp"
-           android:layout_marginTop="5dp"/>
+        <TextView
+            android:id="@+id/conditionTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:text="@string/conditionTextView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/yearTextView" />
 
-       <TextView
-           android:id="@+id/mileageTextView"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           app:layout_constraintStart_toStartOf="parent"
-           app:layout_constraintTop_toBottomOf="@id/additionalInfoTextView"
-           android:text="@string/mileageTextView"
-           android:layout_marginStart="20dp"
-           android:layout_marginTop="5dp"/>
+        <TextView
+            android:id="@+id/mileageTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:text="@string/mileageTextView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/additionalInfoTextView" />
 
-       <TextView
-           android:id="@+id/fuelTypeTextView"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           app:layout_constraintStart_toStartOf="parent"
-           app:layout_constraintTop_toBottomOf="@id/mileageTextView"
-           android:text="@string/fuelTextView"
-           android:layout_marginStart="20dp"
-           android:layout_marginTop="5dp"/>
+        <TextView
+            android:id="@+id/fuelTypeTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:text="@string/fuelTextView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/mileageTextView" />
 
-       <TextView
-           android:id="@+id/hpTextView"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           app:layout_constraintStart_toStartOf="parent"
-           app:layout_constraintTop_toBottomOf="@id/fuelTypeTextView"
-           android:text="@string/hpTextView"
-           android:layout_marginStart="20dp"
-           android:layout_marginTop="5dp"/>
+        <TextView
+            android:id="@+id/hpTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:text="@string/hpTextView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/fuelTypeTextView" />
 
-       <TextView
-           android:id="@+id/kwTextView"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           app:layout_constraintStart_toStartOf="parent"
-           app:layout_constraintTop_toBottomOf="@id/adHpDetailTextView"
-           android:text="@string/kwTextView"
-           android:layout_marginStart="20dp"
-           android:layout_marginTop="5dp"/>
+        <TextView
+            android:id="@+id/kwTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:text="@string/kwTextView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/adHpDetailTextView" />
 
-       <TextView
-           android:id="@+id/cubicTextView"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           app:layout_constraintStart_toStartOf="parent"
-           app:layout_constraintTop_toBottomOf="@id/kwTextView"
-           android:text="@string/cubicTextView"
-           android:layout_marginStart="20dp"
-           android:layout_marginTop="5dp"/>
+        <TextView
+            android:id="@+id/cubicTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:text="@string/cubicTextView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/kwTextView" />
 
-       <TextView
-           android:id="@+id/transmissionTextView"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           app:layout_constraintStart_toStartOf="parent"
-           app:layout_constraintTop_toBottomOf="@id/cubicTextView"
-           android:text="@string/transmissionTextView"
-           android:layout_marginStart="20dp"
-           android:layout_marginTop="5dp"/>
+        <TextView
+            android:id="@+id/transmissionTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:text="@string/transmissionTextView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cubicTextView" />
 
-       <TextView
-           android:id="@+id/driveTextView"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           app:layout_constraintStart_toStartOf="parent"
-           app:layout_constraintTop_toBottomOf="@id/transmissionTextView"
-           android:text="@string/driveTextView"
-           android:layout_marginStart="20dp"
-           android:layout_marginTop="5dp"/>
+        <TextView
+            android:id="@+id/driveTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:text="@string/driveTextView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/transmissionTextView" />
 
-       <TextView
-           android:id="@+id/doorNumberTextView"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           app:layout_constraintStart_toStartOf="parent"
-           app:layout_constraintTop_toBottomOf="@id/driveTextView"
-           android:text="@string/doorNumberTextView"
-           android:layout_marginStart="20dp"
-           android:layout_marginTop="5dp"/>
+        <TextView
+            android:id="@+id/doorNumberTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:text="@string/doorNumberTextView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/driveTextView" />
 
-       <TextView
-           android:id="@+id/seatsNumberTextView"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           app:layout_constraintStart_toStartOf="parent"
-           app:layout_constraintTop_toBottomOf="@id/doorNumberTextView"
-           android:text="@string/seatsNumberTextView"
-           android:layout_marginStart="20dp"
-           android:layout_marginTop="5dp"/>
+        <TextView
+            android:id="@+id/seatsNumberTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:text="@string/seatsNumberTextView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/doorNumberTextView" />
 
-       <TextView
-           android:id="@+id/wheelSideTextView"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           app:layout_constraintStart_toStartOf="parent"
-           app:layout_constraintTop_toBottomOf="@id/seatsNumberTextView"
-           android:text="@string/wheelSideTextView"
-           android:layout_marginStart="20dp"
-           android:layout_marginTop="5dp"/>
+        <TextView
+            android:id="@+id/wheelSideTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:text="@string/wheelSideTextView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/seatsNumberTextView" />
 
-       <TextView
-           android:id="@+id/airConditioningTextView"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           app:layout_constraintStart_toStartOf="parent"
-           app:layout_constraintTop_toBottomOf="@id/wheelSideTextView"
-           android:text="@string/airConditioningTextView"
-           android:layout_marginStart="20dp"
-           android:layout_marginTop="5dp"/>
+        <TextView
+            android:id="@+id/airConditioningTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:text="@string/airConditioningTextView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/wheelSideTextView" />
 
-       <TextView
-           android:id="@+id/colorTextView"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           app:layout_constraintStart_toStartOf="parent"
-           app:layout_constraintTop_toBottomOf="@id/airConditioningTextView"
-           android:text="@string/colorTextView"
-           android:layout_marginStart="20dp"
-           android:layout_marginTop="5dp"/>
+        <TextView
+            android:id="@+id/colorTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:text="@string/colorTextView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/airConditioningTextView" />
 
-       <TextView
-           android:id="@+id/interiorColorTextView"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           app:layout_constraintStart_toStartOf="parent"
-           app:layout_constraintTop_toBottomOf="@id/colorTextView"
-           android:text="@string/interiorColorTextView"
-           android:layout_marginStart="20dp"
-           android:layout_marginTop="5dp"/>
+        <TextView
+            android:id="@+id/interiorColorTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:text="@string/interiorColorTextView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/colorTextView" />
 
-       <TextView
-           android:id="@+id/registeredUntilTextView"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           app:layout_constraintStart_toStartOf="parent"
-           app:layout_constraintTop_toBottomOf="@id/interiorColorTextView"
-           android:text="@string/registeredUntilTextView"
-           android:layout_marginStart="20dp"
-           android:layout_marginTop="5dp"/>
+        <TextView
+            android:id="@+id/registeredUntilTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:text="@string/registeredUntilTextView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/interiorColorTextView" />
 
-       <TextView
-           android:id="@+id/cityTextView"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           app:layout_constraintStart_toStartOf="parent"
-           app:layout_constraintTop_toBottomOf="@id/locationTextView"
-           android:text="@string/cityTextView"
-           android:layout_marginStart="20dp"
-           android:layout_marginTop="10dp"/>
+        <TextView
+            android:id="@+id/cityTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/cityTextView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/locationTextView" />
 
-       <TextView
-           android:id="@+id/countryTextView"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           app:layout_constraintStart_toStartOf="parent"
-           app:layout_constraintTop_toBottomOf="@id/cityTextView"
-           android:text="@string/countryTextView"
-           android:layout_marginStart="20dp"
-           android:layout_marginTop="5dp"/>
+        <TextView
+            android:id="@+id/countryTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:text="@string/countryTextView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cityTextView" />
 
-       <TextView
-           android:id="@+id/adPhoneNumberTextView"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           app:layout_constraintStart_toStartOf="parent"
-           app:layout_constraintTop_toBottomOf="@id/countryTextView"
-           android:text="@string/phoneNumberTextView"
-           android:layout_marginStart="20dp"
-           android:layout_marginTop="5dp"/>
+        <TextView
+            android:id="@+id/adPhoneNumberTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:text="@string/phoneNumberTextView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/countryTextView" />
 
-       <TextView
-           android:id="@+id/locationTextView"
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-           android:text="@string/locationTextView"
-           android:layout_marginStart="20dp"
-           android:layout_marginEnd="20dp"
-           app:layout_constraintStart_toStartOf="parent"
-           app:layout_constraintEnd_toEndOf="parent"
-           app:layout_constraintTop_toBottomOf="@+id/registeredUntilTextView"
-           android:layout_marginTop="15dp"
-           android:textStyle="bold"
-           android:textSize="18sp"/>
+        <TextView
+            android:id="@+id/locationTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="20dp"
+            android:text="@string/locationTextView"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/registeredUntilTextView" />
 
-       <TextView
-           android:id="@+id/descriptionTextView"
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-           android:text="@string/descriptionTextView"
-           android:layout_marginStart="20dp"
-           android:layout_marginEnd="20dp"
-           app:layout_constraintStart_toStartOf="parent"
-           app:layout_constraintEnd_toEndOf="parent"
-           app:layout_constraintTop_toBottomOf="@+id/adPhoneNumberTextView"
-           android:layout_marginTop="15dp"
-           android:textStyle="bold"
-           android:textSize="18sp"/>
+        <TextView
+            android:id="@+id/descriptionTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="20dp"
+            android:text="@string/descriptionTextView"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/adPhoneNumberTextView" />
 
-       <TextView
-           android:id="@+id/adDetailDescriptionTextView"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           app:layout_constraintStart_toStartOf="parent"
-           app:layout_constraintTop_toBottomOf="@id/descriptionTextView"
-           android:layout_marginStart="20dp"
-           android:layout_marginTop="10dp"/>
+        <TextView
+            android:id="@+id/adDetailDescriptionTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/descriptionTextView" />
 
-   </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </ScrollView>

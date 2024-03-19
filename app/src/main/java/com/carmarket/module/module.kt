@@ -6,12 +6,14 @@ import com.carmarket.repository.AdDetailsRepository
 import com.carmarket.repository.AdsByUserRepository
 import com.carmarket.repository.AllAdsRepository
 import com.carmarket.repository.CreateAdRepository
+import com.carmarket.repository.FollowAdRepository
 import com.carmarket.repository.UserRepository
 import com.carmarket.ui.adDetails.AdDetailsViewModel
 import com.carmarket.ui.adsByUser.AdsByUserViewModel
 import com.carmarket.ui.allAds.AllAdsViewModel
 import com.carmarket.ui.changeUser.ChangeUserViewModel
 import com.carmarket.ui.createAd.CreateAdViewModel
+import com.carmarket.ui.followAd.FollowAdViewModel
 import com.carmarket.ui.login.LoginViewModel
 import com.carmarket.ui.registration.RegistrationViewModel
 import com.carmarket.ui.userProfile.UserProfileViewModel
@@ -27,6 +29,7 @@ val viewModule = module {
     viewModel { AdsByUserViewModel(get()) }
     viewModel { UserProfileViewModel(get()) }
     viewModel { ChangeUserViewModel(get()) }
+    viewModel { FollowAdViewModel(get()) }
 }
 
 val networkModule = module {
@@ -39,4 +42,5 @@ val repositoryModule = module {
     single { UserRepository(get()) }
     single { CreateAdRepository(get()) }
     single { AdsByUserRepository(get()) }
+    single { FollowAdRepository(get()) }
 }

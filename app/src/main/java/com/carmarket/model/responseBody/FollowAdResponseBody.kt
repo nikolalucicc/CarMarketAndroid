@@ -2,7 +2,7 @@ package com.carmarket.model.responseBody
 
 import com.google.gson.annotations.SerializedName
 
-data class FavoriteResponseBody(
+data class FollowAdResponseBody(
 
     @SerializedName("id")
     val id: Long,

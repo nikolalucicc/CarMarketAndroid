@@ -1,8 +1,8 @@
 package com.carmarket.model.request
 
-data class FavoriteRequest(
+data class FollowAdRequest(
 
-    val userId: Long,
+    val userId: String,
     val adId: Long
 
 )
