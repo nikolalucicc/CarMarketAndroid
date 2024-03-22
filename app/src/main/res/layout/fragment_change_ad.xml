@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.createAd.CreateAdFragment">
+    tools:context=".ui.changeAd.ChangeAdFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -13,19 +13,27 @@
         android:layout_marginEnd="20dp">
 
         <TextView
-            android:id="@+id/createAdTextView"
+            android:id="@+id/changeAdTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="70dp"
             android:gravity="center"
-            android:text="@string/createAdTitle"
+            android:text="@string/changeAdTitle"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/brandCreateAdTextView"
+            android:id="@+id/changeAdIdTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/changeAdTextView" />
+
+        <TextView
+            android:id="@+id/brandChangeAdTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
@@ -34,20 +42,20 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/createAdTextView" />
+            app:layout_constraintTop_toBottomOf="@id/changeAdIdTextView" />
 
         <Spinner
-            android:id="@+id/brandCreateAdSpinner"
+            android:id="@+id/brandChangeAdSpinner"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:background="@drawable/spinner_background"
             android:spinnerMode="dialog"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/brandCreateAdTextView" />
+            app:layout_constraintTop_toBottomOf="@id/brandChangeAdTextView" />
 
         <TextView
-            android:id="@+id/modelCreateAdTextView"
+            android:id="@+id/modelChangeAdTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -56,10 +64,10 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/brandCreateAdSpinner" />
+            app:layout_constraintTop_toBottomOf="@id/brandChangeAdSpinner" />
 
         <EditText
-            android:id="@+id/modelCreateAdEditText"
+            android:id="@+id/modelChangeAdEditText"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:background="@drawable/spinner_background"
@@ -68,10 +76,10 @@
             android:textColor="#000000"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/modelCreateAdTextView" />
+            app:layout_constraintTop_toBottomOf="@+id/modelChangeAdTextView" />
 
         <TextView
-            android:id="@+id/carBodyCreateAdTextView"
+            android:id="@+id/carBodyChangeAdTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -80,20 +88,20 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/modelCreateAdEditText" />
+            app:layout_constraintTop_toBottomOf="@id/modelChangeAdEditText" />
 
         <Spinner
-            android:id="@+id/carBodyCreateAdSpinner"
+            android:id="@+id/carBodyChangeAdSpinner"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:background="@drawable/spinner_background"
             android:spinnerMode="dialog"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/carBodyCreateAdTextView" />
+            app:layout_constraintTop_toBottomOf="@id/carBodyChangeAdTextView" />
 
         <TextView
-            android:id="@+id/yearCreateAdTextView"
+            android:id="@+id/yearChangeAdTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -102,20 +110,20 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/carBodyCreateAdSpinner" />
+            app:layout_constraintTop_toBottomOf="@id/carBodyChangeAdSpinner" />
 
         <Spinner
-            android:id="@+id/yearCreateAdSpinner"
+            android:id="@+id/yearChangeAdSpinner"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:background="@drawable/spinner_background"
             android:spinnerMode="dialog"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/yearCreateAdTextView" />
+            app:layout_constraintTop_toBottomOf="@id/yearChangeAdTextView" />
 
         <TextView
-            android:id="@+id/priceCreateAdTextView"
+            android:id="@+id/priceChangeAdTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -124,10 +132,10 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/yearCreateAdSpinner" />
+            app:layout_constraintTop_toBottomOf="@id/yearChangeAdSpinner" />
 
         <EditText
-            android:id="@+id/priceCreateAdEditText"
+            android:id="@+id/priceChangeAdEditText"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:background="@drawable/spinner_background"
@@ -137,10 +145,10 @@
             android:textColor="#000000"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/priceCreateAdTextView" />
+            app:layout_constraintTop_toBottomOf="@+id/priceChangeAdTextView" />
 
         <TextView
-            android:id="@+id/conditionCreateAdTextView"
+            android:id="@+id/conditionChangeAdTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -149,20 +157,20 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/priceCreateAdEditText" />
+            app:layout_constraintTop_toBottomOf="@id/priceChangeAdEditText" />
 
         <Spinner
-            android:id="@+id/conditionCreateAdSpinner"
+            android:id="@+id/conditionChangeAdSpinner"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:background="@drawable/spinner_background"
             android:spinnerMode="dialog"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/conditionCreateAdTextView" />
+            app:layout_constraintTop_toBottomOf="@id/conditionChangeAdTextView" />
 
         <TextView
-            android:id="@+id/mileageCreateAdTextView"
+            android:id="@+id/mileageChangeAdTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -171,10 +179,10 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/conditionCreateAdSpinner" />
+            app:layout_constraintTop_toBottomOf="@id/conditionChangeAdSpinner" />
 
         <EditText
-            android:id="@+id/mileageCreateAdEditText"
+            android:id="@+id/mileageChangeAdEditText"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:background="@drawable/spinner_background"
@@ -184,10 +192,10 @@
             android:textColor="#000000"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/mileageCreateAdTextView" />
+            app:layout_constraintTop_toBottomOf="@+id/mileageChangeAdTextView" />
 
         <TextView
-            android:id="@+id/fuelCreateAdTextView"
+            android:id="@+id/fuelChangeAdTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -196,20 +204,20 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/mileageCreateAdEditText" />
+            app:layout_constraintTop_toBottomOf="@id/mileageChangeAdEditText" />
 
         <Spinner
-            android:id="@+id/fuelCreateAdSpinner"
+            android:id="@+id/fuelChangeAdSpinner"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:background="@drawable/spinner_background"
             android:spinnerMode="dialog"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/fuelCreateAdTextView" />
+            app:layout_constraintTop_toBottomOf="@id/fuelChangeAdTextView" />
 
         <TextView
-            android:id="@+id/engineCubicCreateAdTextView"
+            android:id="@+id/engineCubicChangeAdTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -218,10 +226,10 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/fuelCreateAdSpinner" />
+            app:layout_constraintTop_toBottomOf="@id/fuelChangeAdSpinner" />
 
         <EditText
-            android:id="@+id/engineCubicCreateAdEditText"
+            android:id="@+id/engineCubicChangeAdEditText"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:background="@drawable/spinner_background"
@@ -231,10 +239,10 @@
             android:textColor="#000000"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/engineCubicCreateAdTextView" />
+            app:layout_constraintTop_toBottomOf="@+id/engineCubicChangeAdTextView" />
 
         <TextView
-            android:id="@+id/engineHpCreateAdTextView"
+            android:id="@+id/engineHpChangeAdTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -243,10 +251,10 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/engineCubicCreateAdEditText" />
+            app:layout_constraintTop_toBottomOf="@id/engineCubicChangeAdEditText" />
 
         <EditText
-            android:id="@+id/engineHpCreateAdEditText"
+            android:id="@+id/engineHpChangeAdEditText"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:background="@drawable/spinner_background"
@@ -256,10 +264,10 @@
             android:textColor="#000000"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/engineHpCreateAdTextView" />
+            app:layout_constraintTop_toBottomOf="@+id/engineHpChangeAdTextView" />
 
         <TextView
-            android:id="@+id/engineKwCreateAdTextView"
+            android:id="@+id/engineKwChangeAdTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -268,10 +276,10 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/engineHpCreateAdEditText" />
+            app:layout_constraintTop_toBottomOf="@id/engineHpChangeAdEditText" />
 
         <EditText
-            android:id="@+id/engineKwCreateAdEditText"
+            android:id="@+id/engineKwChangeAdEditText"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:background="@drawable/spinner_background"
@@ -281,10 +289,10 @@
             android:textColor="#000000"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/engineKwCreateAdTextView" />
+            app:layout_constraintTop_toBottomOf="@+id/engineKwChangeAdTextView" />
 
         <TextView
-            android:id="@+id/transmissionCreateAdTextView"
+            android:id="@+id/transmissionChangeAdTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -293,20 +301,20 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/engineKwCreateAdEditText" />
+            app:layout_constraintTop_toBottomOf="@id/engineKwChangeAdEditText" />
 
         <Spinner
-            android:id="@+id/transmissionCreateAdSpinner"
+            android:id="@+id/transmissionChangeAdSpinner"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:background="@drawable/spinner_background"
             android:spinnerMode="dialog"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/transmissionCreateAdTextView" />
+            app:layout_constraintTop_toBottomOf="@id/transmissionChangeAdTextView" />
 
         <TextView
-            android:id="@+id/driveCreateAdTextView"
+            android:id="@+id/driveChangeAdTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -315,20 +323,20 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/transmissionCreateAdSpinner" />
+            app:layout_constraintTop_toBottomOf="@id/transmissionChangeAdSpinner" />
 
         <Spinner
-            android:id="@+id/driveCreateAdSpinner"
+            android:id="@+id/driveChangeAdSpinner"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:background="@drawable/spinner_background"
             android:spinnerMode="dialog"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/driveCreateAdTextView" />
+            app:layout_constraintTop_toBottomOf="@id/driveChangeAdTextView" />
 
         <TextView
-            android:id="@+id/doorsNumbereCreateAdTextView"
+            android:id="@+id/doorsNumbereChangeAdTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -337,20 +345,20 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/driveCreateAdSpinner" />
+            app:layout_constraintTop_toBottomOf="@id/driveChangeAdSpinner" />
 
         <Spinner
-            android:id="@+id/doorsNumberCreateAdSpinner"
+            android:id="@+id/doorsNumberChangeAdSpinner"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:background="@drawable/spinner_background"
             android:spinnerMode="dialog"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/doorsNumbereCreateAdTextView" />
+            app:layout_constraintTop_toBottomOf="@id/doorsNumbereChangeAdTextView" />
 
         <TextView
-            android:id="@+id/seatsNumberCreateAdTextView"
+            android:id="@+id/seatsNumberChangeAdTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -359,20 +367,20 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/doorsNumberCreateAdSpinner" />
+            app:layout_constraintTop_toBottomOf="@id/doorsNumberChangeAdSpinner" />
 
         <Spinner
-            android:id="@+id/seatsNumberCreateAdSpinner"
+            android:id="@+id/seatsNumberChangeAdSpinner"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:background="@drawable/spinner_background"
             android:spinnerMode="dialog"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/seatsNumberCreateAdTextView" />
+            app:layout_constraintTop_toBottomOf="@id/seatsNumberChangeAdTextView" />
 
         <TextView
-            android:id="@+id/wheelSideCreateAdTextView"
+            android:id="@+id/wheelSideChangeAdTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -381,20 +389,20 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/seatsNumberCreateAdSpinner" />
+            app:layout_constraintTop_toBottomOf="@id/seatsNumberChangeAdSpinner" />
 
         <Spinner
-            android:id="@+id/wheelSideCreateAdSpinner"
+            android:id="@+id/wheelSideChangeAdSpinner"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:background="@drawable/spinner_background"
             android:spinnerMode="dialog"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/wheelSideCreateAdTextView" />
+            app:layout_constraintTop_toBottomOf="@id/wheelSideChangeAdTextView" />
 
         <TextView
-            android:id="@+id/airConditioningCreateAdTextView"
+            android:id="@+id/airConditioningChangeAdTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -403,20 +411,20 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/wheelSideCreateAdSpinner" />
+            app:layout_constraintTop_toBottomOf="@id/wheelSideChangeAdSpinner" />
 
         <Spinner
-            android:id="@+id/airConditioningCreateAdSpinner"
+            android:id="@+id/airConditioningChangeAdSpinner"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:background="@drawable/spinner_background"
             android:spinnerMode="dialog"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/airConditioningCreateAdTextView" />
+            app:layout_constraintTop_toBottomOf="@id/airConditioningChangeAdTextView" />
 
         <TextView
-            android:id="@+id/colorCreateAdTextView"
+            android:id="@+id/colorChangeAdTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -425,20 +433,20 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/airConditioningCreateAdSpinner" />
+            app:layout_constraintTop_toBottomOf="@id/airConditioningChangeAdSpinner" />
 
         <Spinner
-            android:id="@+id/colorCreateAdSpinner"
+            android:id="@+id/colorChangeAdSpinner"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:background="@drawable/spinner_background"
             android:spinnerMode="dialog"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/colorCreateAdTextView" />
+            app:layout_constraintTop_toBottomOf="@id/colorChangeAdTextView" />
 
         <TextView
-            android:id="@+id/interiorColorCreateAdTextView"
+            android:id="@+id/interiorColorChangeAdTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -447,20 +455,20 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/colorCreateAdSpinner" />
+            app:layout_constraintTop_toBottomOf="@id/colorChangeAdSpinner" />
 
         <Spinner
-            android:id="@+id/interiorColorCreateAdSpinner"
+            android:id="@+id/interiorColorChangeAdSpinner"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:background="@drawable/spinner_background"
             android:spinnerMode="dialog"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/interiorColorCreateAdTextView" />
+            app:layout_constraintTop_toBottomOf="@id/interiorColorChangeAdTextView" />
 
         <TextView
-            android:id="@+id/registeredUntilCreateAdTextView"
+            android:id="@+id/registeredUntilChangeAdTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -469,10 +477,10 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/interiorColorCreateAdSpinner" />
+            app:layout_constraintTop_toBottomOf="@id/interiorColorChangeAdSpinner" />
 
         <EditText
-            android:id="@+id/registeredUntilCreateAdEditText"
+            android:id="@+id/registeredUntilChangeAdEditText"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:background="@drawable/spinner_background"
@@ -481,10 +489,10 @@
             android:textColor="#000000"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/registeredUntilCreateAdTextView" />
+            app:layout_constraintTop_toBottomOf="@+id/registeredUntilChangeAdTextView" />
 
         <TextView
-            android:id="@+id/cityCreateAdTextView"
+            android:id="@+id/cityChangeAdTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -493,10 +501,10 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/registeredUntilCreateAdEditText" />
+            app:layout_constraintTop_toBottomOf="@id/registeredUntilChangeAdEditText" />
 
         <EditText
-            android:id="@+id/cityCreateAdEditText"
+            android:id="@+id/cityChangeAdEditText"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:background="@drawable/spinner_background"
@@ -505,10 +513,10 @@
             android:textColor="#000000"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cityCreateAdTextView" />
+            app:layout_constraintTop_toBottomOf="@+id/cityChangeAdTextView" />
 
         <TextView
-            android:id="@+id/countryCreateAdTextView"
+            android:id="@+id/countryChangeAdTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -517,10 +525,10 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/cityCreateAdEditText" />
+            app:layout_constraintTop_toBottomOf="@id/cityChangeAdEditText" />
 
         <EditText
-            android:id="@+id/countryCreateAdEditText"
+            android:id="@+id/countryChangeAdEditText"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:background="@drawable/spinner_background"
@@ -529,10 +537,10 @@
             android:textColor="#000000"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/countryCreateAdTextView" />
+            app:layout_constraintTop_toBottomOf="@+id/countryChangeAdTextView" />
 
         <TextView
-            android:id="@+id/phoneNumberCreateAdTextView"
+            android:id="@+id/phoneNumberChangeAdTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -541,7 +549,7 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/countryCreateAdEditText" />
+            app:layout_constraintTop_toBottomOf="@id/countryChangeAdEditText" />
 
         <EditText
             android:id="@+id/phoneNumberAdEditText"
@@ -554,10 +562,10 @@
             android:textColor="#000000"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/phoneNumberCreateAdTextView" />
+            app:layout_constraintTop_toBottomOf="@+id/phoneNumberChangeAdTextView" />
 
         <TextView
-            android:id="@+id/descriptionCreateAdTextView"
+            android:id="@+id/descriptionChangeAdTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -580,10 +588,10 @@
             android:textColor="#000000"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/descriptionCreateAdTextView" />
+            app:layout_constraintTop_toBottomOf="@+id/descriptionChangeAdTextView" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/imagesCreateAdRecyclerView"
+            android:id="@+id/imagesChangeAdRecyclerView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
@@ -593,7 +601,7 @@
             app:layout_constraintStart_toStartOf="parent"/>
 
         <Button
-            android:id="@+id/removeImageCreateAdButton"
+            android:id="@+id/removeImageChangeAdButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Obirsi sliku"
@@ -604,33 +612,33 @@
             android:paddingBottom="10dp"
             android:layout_marginTop="20dp"
             android:layout_marginBottom="20dp"
-            app:layout_constraintTop_toBottomOf="@id/imagesCreateAdRecyclerView"
+            app:layout_constraintTop_toBottomOf="@id/imagesChangeAdRecyclerView"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 
         <Button
-            android:id="@+id/addImageButton"
+            android:id="@+id/addImageChangeButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/addImage"
             android:layout_marginTop="20dp"
             android:layout_marginBottom="30dp"
-            app:layout_constraintTop_toBottomOf="@id/removeImageCreateAdButton"
+            app:layout_constraintTop_toBottomOf="@id/removeImageChangeAdButton"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 
         <Button
-            android:id="@+id/createAdButton"
+            android:id="@+id/saveChangeAdButton"
             android:layout_width="300dp"
             android:layout_height="40dp"
             android:layout_marginTop="20dp"
             android:layout_marginBottom="30dp"
-            android:hint="@string/createAdHint"
+            android:hint="@string/changeAdHint"
             android:textColorHint="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/addImageButton" />
+            app:layout_constraintTop_toBottomOf="@+id/addImageChangeButton" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

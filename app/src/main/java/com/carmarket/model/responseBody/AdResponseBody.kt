@@ -16,6 +16,9 @@ data class AdResponseBody(
     @SerializedName("model")
     val model: String,
 
+    @SerializedName("carBody")
+    val carBody: String,
+
     @SerializedName("year")
     val year: Long,
 
@@ -77,7 +80,7 @@ data class AdResponseBody(
     val interiorColor: String,
 
     @SerializedName("registeredUntil")
-    val registeredUntil: List<Int>,
+    val registeredUntil: String,
 
     @SerializedName("phoneNumber")
     val phoneNumber: String

@@ -21,7 +21,11 @@
         android:id="@+id/adDetailsFragment"
         android:name="com.carmarket.ui.adDetails.AdDetailsFragment"
         android:label="fragment_ad_details"
-        tools:layout="@layout/fragment_ad_details" />
+        tools:layout="@layout/fragment_ad_details" >
+        <action
+            android:id="@+id/action_adDetailsFragment_to_changeAdFragment"
+            app:destination="@id/changeAdFragment" />
+    </fragment>
     <fragment
         android:id="@+id/registrationFragment"
         android:name="com.carmarket.ui.registration.RegistrationFragment"
@@ -80,4 +84,9 @@
             android:id="@+id/action_followAdFragment_to_adDetailsFragment"
             app:destination="@id/adDetailsFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/changeAdFragment"
+        android:name="com.carmarket.ui.changeAd.ChangeAdFragment"
+        android:label="fragment_change_ad"
+        tools:layout="@layout/fragment_change_ad" />
 </navigation>

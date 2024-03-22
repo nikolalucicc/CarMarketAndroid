@@ -75,4 +75,7 @@ interface CarMarketApi {
 
     @DELETE("/favorite/delete/{id}")
     suspend fun deleteFromFavorites(@Path("id") id: Long, @Header("Authorization") bearerToken: String)
+
+    @PUT("/ad/update/{id}")
+    suspend fun changeAd(@Body adRequest: AdRequest, @Path("id") id: Long, @Header("Authorization") bearerToken: String)
 }

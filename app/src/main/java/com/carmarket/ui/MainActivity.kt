@@ -38,12 +38,23 @@ class MainActivity : AppCompatActivity() {
         }
 
         navController.addOnDestinationChangedListener { _, destination, _ ->
-            if (destination.id == R.id.adDetailsFragment) {
-                binding?.toolbar?.followAdButton?.visibility = View.VISIBLE
-            } else {
-                binding?.toolbar?.followAdButton?.visibility = View.GONE
+            when (destination.id) {
+                R.id.adDetailsFragment -> {
+                    val previousBackStackEntry = navController.previousBackStackEntry
+                    val previousFragmentId = previousBackStackEntry?.destination?.id
+                    if (previousFragmentId == R.id.allAdsFragment) {
+                        binding?.toolbar?.followAdButton?.visibility = View.VISIBLE
+                        binding?.toolbar?.changeAdButton?.visibility = View.GONE
+                    } else if (previousFragmentId == R.id.adsByUserFragment) {
+                        binding?.toolbar?.followAdButton?.visibility = View.GONE
+                        binding?.toolbar?.changeAdButton?.visibility = View.VISIBLE
+                    }
+                }
+                else -> {
+                    binding?.toolbar?.followAdButton?.visibility = View.GONE
+                    binding?.toolbar?.changeAdButton?.visibility = View.GONE
+                }
             }
-
         }
 
     }

@@ -89,6 +89,8 @@
     <string name="addImage">Dodaj sliku</string>
     <string name="carBodyHint">Tip karoserije</string>
     <string name="changeUserData">Izmenite podatke</string>
+    <string name="changeAdTitle">Izmenite oglas</string>
+    <string name="changeAdHint">Sacuvaj izmene</string>
 
     <string-array name="brands">
         <item>Acura</item>
