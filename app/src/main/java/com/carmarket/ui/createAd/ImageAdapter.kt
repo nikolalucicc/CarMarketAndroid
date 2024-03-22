@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.carmarket.R
 
-class ImageAdapter(private val context: Context, private val images: List<String>) :
+class ImageAdapter(private val context: Context, private val images: MutableList<String>) :
     RecyclerView.Adapter<ImageAdapter.ImageViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ImageViewHolder {

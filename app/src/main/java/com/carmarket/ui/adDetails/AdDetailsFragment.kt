@@ -10,12 +10,14 @@ import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import com.carmarket.R
 import com.carmarket.databinding.FragmentAdDetailsBinding
 import com.carmarket.model.request.FollowAdRequest
 import com.carmarket.model.responseBody.AdResponseBody
 import com.carmarket.stateClasses.FollowAdUIState
 import com.carmarket.stateClasses.OneAdUIState
+import com.carmarket.ui.changeAd.ChangeAdFragment
 import com.carmarket.ui.followAd.FollowAdViewModel
 import kotlinx.coroutines.launch
 import org.json.JSONObject
@@ -37,13 +39,14 @@ class AdDetailsFragment : Fragment() {
 
         val adId = arguments?.getLong("adId") ?: -1
         val followedAdId = arguments?.getLong("followedAdId") ?: -1
+        val jwt = arguments?.getString("jwt") ?: ""
 
         if (adId != -1L) {
             lifecycleScope.launch {
                 viewModel.getAdDetails(adId)
             }
 
-            arguments?.getString("jwt")?.let { jwt ->
+            arguments?.getString("jwt")?.let {
                 checkIfAdIsFollowed(adId, jwt)
             }
         } else {
@@ -68,6 +71,15 @@ class AdDetailsFragment : Fragment() {
                     updateFollowButtonState(!isAdFollowed)
                 }
             }
+        }
+
+        requireActivity().findViewById<ImageButton>(R.id.changeAdButton)?.setOnClickListener {
+            val bundle = Bundle().apply {
+                putLong("adId", adId)
+                putString("jwt", jwt)
+            }
+            val navController = findNavController()
+            navController.navigate(R.id.action_adDetailsFragment_to_changeAdFragment, bundle)
         }
 
         adDetails()
@@ -185,7 +197,7 @@ class AdDetailsFragment : Fragment() {
         adAirConditioningDetailTextView.text = data.airConditioning
         adColorDetailTextView.text = data.color
         adInteriorColorDetailTextView.text = data.interiorColor
-        adRegisteredUntilDetailTextView.text = data.registeredUntil.joinToString(".")
+        adRegisteredUntilDetailTextView.text = data.registeredUntil
         adTelephoneNumberDetailTextView.text = data.phoneNumber
 
         val imageUrls = data.images

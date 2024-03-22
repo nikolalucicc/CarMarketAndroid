@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
@@ -9,9 +8,9 @@
         android:id="@+id/toolbarLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageButton
             android:id="@+id/menuButton"
@@ -20,21 +19,21 @@
             android:layout_margin="15dp"
             android:background="@null"
             android:clickable="true"
+            android:contentDescription="@null"
+            android:focusable="true"
             android:src="@drawable/baseline_menu_24"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:focusable="true"
-            android:contentDescription="@null"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/app_name_textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/app_name"
+            android:textColor="@color/white"
             android:textSize="20sp"
             app:layout_constraintStart_toEndOf="@id/menuButton"
-            app:layout_constraintTop_toTopOf="parent"
-            android:textColor="@color/white"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.appcompat.widget.Toolbar>
 
@@ -42,21 +41,34 @@
         android:id="@+id/sortSpinner"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="@id/toolbarLayout"
-        app:layout_constraintEnd_toEndOf="@id/toolbarLayout"
-        app:layout_constraintBottom_toBottomOf="@id/toolbarLayout"
         android:layout_margin="15dp"
-        android:background="@null"/>
+        android:background="@null"
+        app:layout_constraintBottom_toBottomOf="@id/toolbarLayout"
+        app:layout_constraintEnd_toEndOf="@id/toolbarLayout"
+        app:layout_constraintTop_toTopOf="@id/toolbarLayout" />
 
     <ImageButton
         android:id="@+id/followAdButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/baseline_favorite_border_24"
-        app:layout_constraintTop_toTopOf="@id/toolbarLayout"
-        app:layout_constraintEnd_toEndOf="@id/toolbarLayout"
-        app:layout_constraintBottom_toBottomOf="@id/toolbarLayout"
         android:layout_margin="15dp"
-        android:background="@null"/>
+        android:background="@null"
+        android:src="@drawable/baseline_favorite_border_24"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/toolbarLayout"
+        app:layout_constraintEnd_toEndOf="@id/toolbarLayout"
+        app:layout_constraintTop_toTopOf="@id/toolbarLayout" />
+
+    <ImageButton
+        android:id="@+id/changeAdButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:background="@null"
+        android:src="@drawable/baseline_edit_24"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/toolbarLayout"
+        app:layout_constraintEnd_toEndOf="@id/toolbarLayout"
+        app:layout_constraintTop_toTopOf="@id/toolbarLayout" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
