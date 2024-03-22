@@ -25,6 +25,9 @@
         <action
             android:id="@+id/action_adDetailsFragment_to_changeAdFragment"
             app:destination="@id/changeAdFragment" />
+        <action
+            android:id="@+id/action_adDetailsFragment_to_adsByUserFragment"
+            app:destination="@id/adsByUserFragment" />
     </fragment>
     <fragment
         android:id="@+id/registrationFragment"

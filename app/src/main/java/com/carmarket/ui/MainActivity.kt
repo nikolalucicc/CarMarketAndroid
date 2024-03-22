@@ -45,14 +45,17 @@ class MainActivity : AppCompatActivity() {
                     if (previousFragmentId == R.id.allAdsFragment) {
                         binding?.toolbar?.followAdButton?.visibility = View.VISIBLE
                         binding?.toolbar?.changeAdButton?.visibility = View.GONE
+                        binding?.toolbar?.removeAdButton?.visibility = View.GONE
                     } else if (previousFragmentId == R.id.adsByUserFragment) {
                         binding?.toolbar?.followAdButton?.visibility = View.GONE
                         binding?.toolbar?.changeAdButton?.visibility = View.VISIBLE
+                        binding?.toolbar?.removeAdButton?.visibility = View.VISIBLE
                     }
                 }
                 else -> {
                     binding?.toolbar?.followAdButton?.visibility = View.GONE
                     binding?.toolbar?.changeAdButton?.visibility = View.GONE
+                    binding?.toolbar?.removeAdButton?.visibility = View.GONE
                 }
             }
         }

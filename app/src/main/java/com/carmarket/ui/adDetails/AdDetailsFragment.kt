@@ -19,6 +19,7 @@ import com.carmarket.stateClasses.FollowAdUIState
 import com.carmarket.stateClasses.OneAdUIState
 import com.carmarket.ui.changeAd.ChangeAdFragment
 import com.carmarket.ui.followAd.FollowAdViewModel
+import com.carmarket.ui.removeAd.RemoveAdViewModel
 import kotlinx.coroutines.launch
 import org.json.JSONObject
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
@@ -28,6 +29,7 @@ class AdDetailsFragment : Fragment() {
     private var binding: FragmentAdDetailsBinding? = null
     private val viewModel: AdDetailsViewModel by sharedViewModel()
     private val followAdViewModel: FollowAdViewModel by sharedViewModel()
+    private val removeAdViewModel: RemoveAdViewModel by sharedViewModel()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -80,6 +82,24 @@ class AdDetailsFragment : Fragment() {
             }
             val navController = findNavController()
             navController.navigate(R.id.action_adDetailsFragment_to_changeAdFragment, bundle)
+        }
+
+        requireActivity().findViewById<ImageButton>(R.id.removeAdButton)?.setOnClickListener {
+            val jwt = arguments?.getString("jwt", "")
+            if (adId != -1L && !jwt.isNullOrEmpty()) {
+                lifecycleScope.launch {
+                    try {
+                        removeAdViewModel.removeAd(adId, jwt)
+                        val bundle = Bundle().apply {
+                            putString("accessToken", jwt)
+                        }
+                        findNavController().navigate(R.id.action_adDetailsFragment_to_adsByUserFragment, bundle)
+                    } catch (e: Exception) {
+                        Toast.makeText(requireContext(), "Greška prilikom brisanja oglasa.", Toast.LENGTH_SHORT).show()
+                        Log.e("AdDetailsFragment", "Greška prilikom brisanja oglasa: ${e.message}")
+                    }
+                }
+            }
         }
 
         adDetails()

@@ -78,4 +78,7 @@ interface CarMarketApi {
 
     @PUT("/ad/update/{id}")
     suspend fun changeAd(@Body adRequest: AdRequest, @Path("id") id: Long, @Header("Authorization") bearerToken: String)
+
+    @DELETE("/ad/delete/{id}")
+    suspend fun removeAd(@Path("id") id: Long, @Header("Authorization") bearerToken: String)
 }
