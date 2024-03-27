@@ -10,7 +10,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.appcompat.app.AlertDialog
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.carmarket.R
 import com.carmarket.databinding.FragmentCreateAdBinding
 import com.carmarket.model.request.AdRequest
 import com.carmarket.utils.SpinnerAdapters
@@ -62,8 +65,12 @@ class CreateAdFragment : Fragment() {
         binding?.interiorColorCreateAdSpinner?.adapter = SpinnerAdapters.interiorColorAdapter(requireContext())
 
         arguments?.getString("accessToken")?.let { token ->
-            bearerToken = token
-        }
+            if (token.isEmpty()) {
+                showErrorDialog("Molimo vas da se ulogujete!")
+            } else {
+                bearerToken = token
+            }
+        } ?: showErrorDialog("Molimo vas da se ulogujete!")
 
     }
 
@@ -149,6 +156,18 @@ class CreateAdFragment : Fragment() {
     private fun openImagePicker() {
         val intent = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
         imagePickerLauncher.launch(intent)
+    }
+
+    private fun showErrorDialog(message: String) {
+        AlertDialog.Builder(requireContext()).apply {
+            setTitle(R.string.error)
+            setMessage(message)
+            setPositiveButton(R.string.ok) { _, _ ->
+                val action = R.id.action_createAdFragment_to_loginFragment
+                findNavController().navigate(action)
+            }
+            create().show()
+        }
     }
 
     override fun onDestroyView() {

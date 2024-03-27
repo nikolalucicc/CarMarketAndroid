@@ -60,10 +60,10 @@ class FollowAdFragment : Fragment() {
             if (id != null) {
                 viewModel.getFollowingAds(id, token)
             } else {
-                showErrorDialog("Invalid token.")
+                showTokenErrorDialog("Molimo vas da se ulogujete!")
             }
         } ?: run {
-            showErrorDialog("Access token not found.")
+            showTokenErrorDialog("Molimo vas da se ulogujete!")
         }
 
         observeAdData()
@@ -112,6 +112,18 @@ class FollowAdFragment : Fragment() {
             setMessage(message)
             setPositiveButton(R.string.ok) { _, _ ->
                 requireActivity().finishAffinity()
+            }
+            create().show()
+        }
+    }
+
+    private fun showTokenErrorDialog(message: String) {
+        AlertDialog.Builder(requireContext()).apply {
+            setTitle(R.string.error)
+            setMessage(message)
+            setPositiveButton(R.string.ok) { _, _ ->
+                val action = R.id.action_followAdFragment_to_loginFragment
+                findNavController().navigate(action)
             }
             create().show()
         }
