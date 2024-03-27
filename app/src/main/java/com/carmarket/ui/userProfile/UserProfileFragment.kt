@@ -1,5 +1,7 @@
 package com.carmarket.ui.userProfile
 
+import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Base64
 import android.util.Log
@@ -27,6 +29,8 @@ class UserProfileFragment : Fragment() {
     private var binding: FragmentUserProfileBinding? = null
     private val viewModel: UserProfileViewModel by sharedViewModel()
     private var accessToken: String? = null
+    private lateinit var sharedPreferences: SharedPreferences
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -36,6 +40,8 @@ class UserProfileFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        sharedPreferences = requireContext().getSharedPreferences("com.carmarket", Context.MODE_PRIVATE)
+
         binding?.changeProfileButton?.setOnClickListener {
             val bundle = Bundle()
             bundle.putString("accessToken", accessToken)
@@ -44,6 +50,9 @@ class UserProfileFragment : Fragment() {
             navController.navigate(R.id.action_userProfileFragment_to_changeUserFragment, bundle)
         }
 
+        binding?.logoutButton?.setOnClickListener {
+            logout()
+        }
 
         arguments?.getString("accessToken")?.let { token ->
             accessToken = token
@@ -125,6 +134,13 @@ class UserProfileFragment : Fragment() {
             }
             create().show()
         }
+    }
+
+    private fun logout() {
+        sharedPreferences.edit().remove("accessToken").apply()
+
+        val action = UserProfileFragmentDirections.actionUserProfileFragmentToLoginFragment()
+        findNavController().navigate(action)
     }
 
     override fun onDestroyView() {
