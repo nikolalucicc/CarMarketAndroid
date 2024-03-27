@@ -50,6 +50,10 @@ class MainActivity : AppCompatActivity() {
                         binding?.toolbar?.followAdButton?.visibility = View.GONE
                         binding?.toolbar?.changeAdButton?.visibility = View.VISIBLE
                         binding?.toolbar?.removeAdButton?.visibility = View.VISIBLE
+                    } else if (previousFragmentId == R.id.searchResultFragment) {
+                        binding?.toolbar?.followAdButton?.visibility = View.VISIBLE
+                        binding?.toolbar?.changeAdButton?.visibility = View.GONE
+                        binding?.toolbar?.removeAdButton?.visibility = View.GONE
                     }
                 }
                 else -> {
@@ -130,6 +134,18 @@ class MainActivity : AppCompatActivity() {
                     }
 
                     navController.navigate(R.id.followAdFragment, bundle)
+                    drawerLayout.closeDrawer(GravityCompat.START)
+                    true
+                }
+
+                R.id.nav_search -> {
+                    val accessToken = getAccessToken()
+
+                    val bundle = Bundle().apply {
+                        putString("accessToken", accessToken)
+                    }
+
+                    navController.navigate(R.id.searchAdFragment, bundle)
                     drawerLayout.closeDrawer(GravityCompat.START)
                     true
                 }

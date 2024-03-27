@@ -16,6 +16,7 @@ import retrofit2.http.Header
 import retrofit2.http.POST
 import retrofit2.http.PUT
 import retrofit2.http.Path
+import retrofit2.http.Query
 
 interface CarMarketApi {
 
@@ -81,4 +82,39 @@ interface CarMarketApi {
 
     @DELETE("/ad/delete/{id}")
     suspend fun removeAd(@Path("id") id: Long, @Header("Authorization") bearerToken: String)
+
+    @GET("/ad/search")
+    suspend fun searchAd(
+        @Query("brand") brand: String? = null,
+        @Query("model") model: String? = null,
+        @Query("carBody") carBody: String? = null,
+        @Query("minYear") minYear: Int? = null,
+        @Query("maxYear") maxYear: Int? = null,
+        @Query("minPrice") minPrice: Int? = null,
+        @Query("maxPrice") maxPrice: Int? = null,
+        @Query("condition") condition: String? = null,
+        @Query("minMileage") minMileage: Int? = null,
+        @Query("maxMileage") maxMileage: Int? = null,
+        @Query("fuel") fuel: String? = null,
+        @Query("minEngineHp") minEngineHp: Int? = null,
+        @Query("maxEngineHp") maxEngineHp: Int? = null,
+        @Query("minEngineKw") minEngineKw: Int? = null,
+        @Query("maxEngineKw") maxEngineKw: Int? = null,
+        @Query("minEngineCubic") minEngineCubic: Int? = null,
+        @Query("maxEngineCubic") maxEngineCubic: Int? = null,
+        @Query("transmission") transmission: String? = null,
+        @Query("city") city: String? = null,
+        @Query("country") country: String? = null,
+        @Query("drive") drive: String? = null,
+        @Query("doorNumber") doorNumber: String? = null,
+        @Query("seatsNumber") seatsNumber: String? = null,
+        @Query("wheelSide") wheelSide: String? = null,
+        @Query("airConditioning") airConditioning: String? = null,
+        @Query("color") color: String? = null,
+        @Query("interiorColor") interiorColor: String? = null,
+        @Query("registeredUntil") registeredUntil: String? = null,
+        @Query("phoneNumber") phoneNumber: String? = null,
+        @Header("Authorization") bearerToken: String
+    ): Response<List<AdResponseBody>>
+
 }
