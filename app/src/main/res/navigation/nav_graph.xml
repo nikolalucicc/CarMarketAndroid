@@ -92,4 +92,22 @@
         android:name="com.carmarket.ui.changeAd.ChangeAdFragment"
         android:label="fragment_change_ad"
         tools:layout="@layout/fragment_change_ad" />
+    <fragment
+        android:id="@+id/searchAdFragment"
+        android:name="com.carmarket.ui.searchAd.SearchAdFragment"
+        android:label="fragment_search_ad"
+        tools:layout="@layout/fragment_search_ad" >
+        <action
+            android:id="@+id/action_searchAdFragment_to_searchResultFragment"
+            app:destination="@id/searchResultFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchResultFragment"
+        android:name="com.carmarket.ui.searchResult.SearchResultFragment"
+        android:label="fragment_search_result"
+        tools:layout="@layout/fragment_search_result" >
+        <action
+            android:id="@+id/action_searchResultFragment_to_adDetailsFragment"
+            app:destination="@id/adDetailsFragment" />
+    </fragment>
 </navigation>

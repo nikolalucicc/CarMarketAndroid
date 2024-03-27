@@ -90,8 +90,19 @@
     <string name="changeUserData">Izmenite podatke</string>
     <string name="changeAdTitle">Izmenite oglas</string>
     <string name="changeAdHint">Sacuvaj izmene</string>
+    <string name="minPriceText">Min cena</string>
+    <string name="maxPriceText">Max cena</string>
+    <string name="minMileageText">Min kilometraza</string>
+    <string name="maxMileageText">Max kilometraza</string>
+    <string name="minEngineCubicText">Min kubikaza</string>
+    <string name="maxEngineCubicText">Max kubikaza</string>
+    <string name="minHPText">Min KS</string>
+    <string name="maxHPText">Max KS</string>
+    <string name="minKWText">Min KW</string>
+    <string name="maxKWText">Max KW</string>
 
     <string-array name="brands">
+        <item></item>
         <item>Acura</item>
         <item>Alfa Romeo</item>
         <item>Audi</item>
@@ -146,6 +157,7 @@
     </string-array>
 
     <string-array name="years">
+        <item></item>
         <item>2024</item>
         <item>2023</item>
         <item>2022</item>
@@ -194,6 +206,7 @@
     </string-array>
 
     <string-array name="car_conditions">
+        <item></item>
         <item>Novo</item>
         <item>Polovno</item>
         <item>Oštećeno</item>
@@ -203,6 +216,7 @@
     </string-array>
 
     <string-array name="fuel_type">
+        <item></item>
         <item>Benzin</item>
         <item>Dizel</item>
         <item>Benzin + Gas (TNG)</item>
@@ -212,6 +226,7 @@
     </string-array>
 
     <string-array name="transmission">
+        <item></item>
         <item>Manuelni 4 brzine</item>
         <item>Manuelni 5 brzina</item>
         <item>Manuelni 6 brzina</item>
@@ -219,17 +234,20 @@
     </string-array>
 
     <string-array name="drive">
+        <item></item>
         <item>Prednji</item>
         <item>Zadnji</item>
         <item>4x4</item>
     </string-array>
 
     <string-array name="doors_number">
+        <item></item>
         <item>3</item>
         <item>5</item>
     </string-array>
 
     <string-array name="seats_number">
+        <item></item>
         <item>2</item>
         <item>3</item>
         <item>4</item>
@@ -238,17 +256,20 @@
     </string-array>
 
     <string-array name="wheel_side">
+        <item></item>
         <item>Leva</item>
         <item>Desna</item>
     </string-array>
 
     <string-array name="air_conditioning">
+        <item></item>
         <item>Nema klime</item>
         <item>Manuelna klima</item>
         <item>Automatska klima</item>
     </string-array>
 
     <string-array name="colors">
+        <item></item>
         <item>Bela</item>
         <item>Crna</item>
         <item>Siva</item>
@@ -270,6 +291,7 @@
     </string-array>
 
     <string-array name="interior_colors">
+        <item></item>
         <item>Bež</item>
         <item>Crna</item>
         <item>Siva</item>
@@ -278,6 +300,7 @@
     </string-array>
 
     <string-array name="car_body">
+        <item></item>
         <item>Limunzina</item>
         <item>Hečbek</item>
         <item>Karavan</item>

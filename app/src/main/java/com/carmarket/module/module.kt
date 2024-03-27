@@ -9,6 +9,7 @@ import com.carmarket.repository.ChangeAdRepository
 import com.carmarket.repository.CreateAdRepository
 import com.carmarket.repository.FollowAdRepository
 import com.carmarket.repository.RemoveAdRepository
+import com.carmarket.repository.SearchAdRepository
 import com.carmarket.repository.UserRepository
 import com.carmarket.ui.adDetails.AdDetailsViewModel
 import com.carmarket.ui.adsByUser.AdsByUserViewModel
@@ -20,6 +21,7 @@ import com.carmarket.ui.followAd.FollowAdViewModel
 import com.carmarket.ui.login.LoginViewModel
 import com.carmarket.ui.registration.RegistrationViewModel
 import com.carmarket.ui.removeAd.RemoveAdViewModel
+import com.carmarket.ui.searchAd.SearchAdViewModel
 import com.carmarket.ui.userProfile.UserProfileViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
@@ -36,6 +38,7 @@ val viewModule = module {
     viewModel { FollowAdViewModel(get()) }
     viewModel { ChangeAdViewModel(get()) }
     viewModel { RemoveAdViewModel(get()) }
+    viewModel { SearchAdViewModel(get()) }
 }
 
 val networkModule = module {
@@ -51,4 +54,5 @@ val repositoryModule = module {
     single { FollowAdRepository(get()) }
     single { ChangeAdRepository(get()) }
     single { RemoveAdRepository(get()) }
+    single { SearchAdRepository(get()) }
 }

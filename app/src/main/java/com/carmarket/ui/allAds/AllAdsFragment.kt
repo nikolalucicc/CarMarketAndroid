@@ -127,7 +127,6 @@ class AllAdsFragment : Fragment() {
     }
 
     private fun allAds() {
-        val accessToken = getAccessToken()
         lifecycleScope.launch {
             viewModel.adUiDataState.collect { state ->
                 when (state) {
