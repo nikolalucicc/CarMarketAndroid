@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">CarMarket</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="logout">Izlogujte se</string>
 
     <string name="nav_all_ads">Svi oglasi</string>
     <string name="nav_search">Pretraga oglasa</string>
