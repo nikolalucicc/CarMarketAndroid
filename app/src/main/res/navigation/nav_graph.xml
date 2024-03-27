@@ -54,7 +54,11 @@
         android:id="@+id/createAdFragment"
         android:name="com.carmarket.ui.createAd.CreateAdFragment"
         android:label="fragment_create_ad"
-        tools:layout="@layout/fragment_create_ad" />
+        tools:layout="@layout/fragment_create_ad" >
+        <action
+            android:id="@+id/action_createAdFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
     <fragment
         android:id="@+id/adsByUserFragment"
         android:name="com.carmarket.ui.adsByUser.AdsByUserFragment"
@@ -63,6 +67,9 @@
         <action
             android:id="@+id/action_adsByUserFragment_to_adDetailsFragment"
             app:destination="@id/adDetailsFragment" />
+        <action
+            android:id="@+id/action_adsByUserFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
     </fragment>
     <fragment
         android:id="@+id/userProfileFragment"
@@ -72,6 +79,9 @@
         <action
             android:id="@+id/action_userProfileFragment_to_changeUserFragment"
             app:destination="@id/changeUserFragment" />
+        <action
+            android:id="@+id/action_userProfileFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
     </fragment>
     <fragment
         android:id="@+id/changeUserFragment"
@@ -86,6 +96,9 @@
         <action
             android:id="@+id/action_followAdFragment_to_adDetailsFragment"
             app:destination="@id/adDetailsFragment" />
+        <action
+            android:id="@+id/action_followAdFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
     </fragment>
     <fragment
         android:id="@+id/changeAdFragment"

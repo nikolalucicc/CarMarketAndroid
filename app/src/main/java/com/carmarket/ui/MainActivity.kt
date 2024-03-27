@@ -1,10 +1,10 @@
 package com.carmarket.ui
 
 import android.content.Context
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
@@ -14,26 +14,26 @@ import com.carmarket.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity() {
 
     private lateinit var navController: NavController
-    private var binding: ActivityMainBinding? = null
+    private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding?.root)
+        setContentView(binding.root)
 
         val navHostFragment =
             supportFragmentManager.findFragmentById(R.id.fragment) as NavHostFragment
         navController = navHostFragment.navController
 
-        setSupportActionBar(binding?.toolbar?.toolbarLayout)
+        setSupportActionBar(binding.toolbar.toolbarLayout)
         supportActionBar?.setDisplayShowTitleEnabled(false)
-        binding?.setUpDrawerLayout()
+        binding.setUpDrawerLayout()
 
         navController.addOnDestinationChangedListener { _, destination, _ ->
             if (destination.id == R.id.allAdsFragment) {
-                binding?.toolbar?.sortSpinner?.visibility = View.VISIBLE
+                binding.toolbar.sortSpinner.visibility = View.VISIBLE
             } else {
-                binding?.toolbar?.sortSpinner?.visibility = View.GONE
+                binding.toolbar.sortSpinner.visibility = View.GONE
             }
         }
 
@@ -42,35 +42,50 @@ class MainActivity : AppCompatActivity() {
                 R.id.adDetailsFragment -> {
                     val previousBackStackEntry = navController.previousBackStackEntry
                     val previousFragmentId = previousBackStackEntry?.destination?.id
-                    if (previousFragmentId == R.id.allAdsFragment) {
-                        binding?.toolbar?.followAdButton?.visibility = View.VISIBLE
-                        binding?.toolbar?.changeAdButton?.visibility = View.GONE
-                        binding?.toolbar?.removeAdButton?.visibility = View.GONE
-                    } else if (previousFragmentId == R.id.adsByUserFragment) {
-                        binding?.toolbar?.followAdButton?.visibility = View.GONE
-                        binding?.toolbar?.changeAdButton?.visibility = View.VISIBLE
-                        binding?.toolbar?.removeAdButton?.visibility = View.VISIBLE
-                    } else if (previousFragmentId == R.id.searchResultFragment) {
-                        binding?.toolbar?.followAdButton?.visibility = View.VISIBLE
-                        binding?.toolbar?.changeAdButton?.visibility = View.GONE
-                        binding?.toolbar?.removeAdButton?.visibility = View.GONE
+                    when (previousFragmentId) {
+                        R.id.allAdsFragment -> {
+                            binding.toolbar.followAdButton.visibility = View.VISIBLE
+                            binding.toolbar.changeAdButton.visibility = View.GONE
+                            binding.toolbar.removeAdButton.visibility = View.GONE
+                        }
+                        R.id.adsByUserFragment -> {
+                            binding.toolbar.followAdButton.visibility = View.GONE
+                            binding.toolbar.changeAdButton.visibility = View.VISIBLE
+                            binding.toolbar.removeAdButton.visibility = View.VISIBLE
+                        }
+                        R.id.searchResultFragment -> {
+                            binding.toolbar.followAdButton.visibility = View.VISIBLE
+                            binding.toolbar.changeAdButton.visibility = View.GONE
+                            binding.toolbar.removeAdButton.visibility = View.GONE
+                        }
+                        else -> {
+                            binding.toolbar.followAdButton.visibility = View.GONE
+                            binding.toolbar.changeAdButton.visibility = View.GONE
+                            binding.toolbar.removeAdButton.visibility = View.GONE
+                        }
                     }
                 }
                 else -> {
-                    binding?.toolbar?.followAdButton?.visibility = View.GONE
-                    binding?.toolbar?.changeAdButton?.visibility = View.GONE
-                    binding?.toolbar?.removeAdButton?.visibility = View.GONE
+                    binding.toolbar.followAdButton.visibility = View.GONE
+                    binding.toolbar.changeAdButton.visibility = View.GONE
+                    binding.toolbar.removeAdButton.visibility = View.GONE
                 }
             }
         }
-
     }
 
     private fun ActivityMainBinding.setUpDrawerLayout() {
         toolbar.menuButton.setOnClickListener { drawerLayout.openDrawer(GravityCompat.START) }
 
-        navigationView.setNavigationItemSelectedListener { menuItem ->
+        val accessToken = getAccessToken()
+        val isUserLoggedIn = accessToken.isNotEmpty()
 
+        navigationView.menu.apply {
+            findItem(R.id.nav_login).isVisible = !isUserLoggedIn
+            findItem(R.id.nav_registration).isVisible = !isUserLoggedIn
+        }
+
+        navigationView.setNavigationItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
                 R.id.nav_all_ads -> {
                     navController.navigate(R.id.allAdsFragment)
@@ -92,11 +107,9 @@ class MainActivity : AppCompatActivity() {
 
                 R.id.nav_create_ad -> {
                     val accessToken = getAccessToken()
-
                     val bundle = Bundle().apply {
                         putString("accessToken", accessToken)
                     }
-
                     navController.navigate(R.id.createAdFragment, bundle)
                     drawerLayout.closeDrawer(GravityCompat.START)
                     true
@@ -104,11 +117,9 @@ class MainActivity : AppCompatActivity() {
 
                 R.id.nav_users_ads -> {
                     val accessToken = getAccessToken()
-
                     val bundle = Bundle().apply {
                         putString("accessToken", accessToken)
                     }
-
                     navController.navigate(R.id.adsByUserFragment, bundle)
                     drawerLayout.closeDrawer(GravityCompat.START)
                     true
@@ -116,11 +127,9 @@ class MainActivity : AppCompatActivity() {
 
                 R.id.nav_profile -> {
                     val accessToken = getAccessToken()
-
                     val bundle = Bundle().apply {
                         putString("accessToken", accessToken)
                     }
-
                     navController.navigate(R.id.userProfileFragment, bundle)
                     drawerLayout.closeDrawer(GravityCompat.START)
                     true
@@ -128,11 +137,9 @@ class MainActivity : AppCompatActivity() {
 
                 R.id.nav_following_ads -> {
                     val accessToken = getAccessToken()
-
                     val bundle = Bundle().apply {
                         putString("accessToken", accessToken)
                     }
-
                     navController.navigate(R.id.followAdFragment, bundle)
                     drawerLayout.closeDrawer(GravityCompat.START)
                     true
@@ -140,11 +147,9 @@ class MainActivity : AppCompatActivity() {
 
                 R.id.nav_search -> {
                     val accessToken = getAccessToken()
-
                     val bundle = Bundle().apply {
                         putString("accessToken", accessToken)
                     }
-
                     navController.navigate(R.id.searchAdFragment, bundle)
                     drawerLayout.closeDrawer(GravityCompat.START)
                     true
@@ -163,5 +168,4 @@ class MainActivity : AppCompatActivity() {
         }
         return accessToken ?: ""
     }
-
 }
