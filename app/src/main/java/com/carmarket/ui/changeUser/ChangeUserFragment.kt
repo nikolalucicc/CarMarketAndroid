@@ -22,8 +22,6 @@ import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
 class ChangeUserFragment : Fragment() {
 
-    //TODO Zasto ne radi izmena username i namestiti izmenu passworda, kada se menjaju ova dva da se obrise token i korisnik mora ponovo da se uloguje
-
     private var binding: FragmentChangeUserBinding? = null
     private var accessToken: String? = null
     private val userProfileViewModel: UserProfileViewModel by sharedViewModel()
@@ -51,12 +49,25 @@ class ChangeUserFragment : Fragment() {
 
         binding?.saveChangesButton?.setOnClickListener {
             val email = binding?.emailEditText?.text.toString()
-            val password = binding?.passwordEditText?.text.toString()
             val newUsername = binding?.usernameEditText?.text.toString()
             val firstName = binding?.firstNameEditText?.text.toString()
             val lastName = binding?.lastNameEditText?.text.toString()
+            val currentPassword = binding?.currentPasswordEditText?.text.toString()
+            val newPassword = binding?.newPasswordEditText?.text.toString()
+            val confirmedPassword = binding?.confirmedPasswordEditText?.text.toString()
 
-            val user = UserRequest(email, password, newUsername, firstName, lastName)
+            if (email.isEmpty() || newUsername.isEmpty() || firstName.isEmpty() || lastName.isEmpty() ||
+                currentPassword.isEmpty() || newPassword.isEmpty() || confirmedPassword.isEmpty()) {
+                showErrorDialog("Molimo vas da popunite sava polja.")
+                return@setOnClickListener
+            }
+
+            if (newPassword != confirmedPassword) {
+                showErrorDialog("Nova lozinka i potvrđena lozinka se ne poklapaju.")
+                return@setOnClickListener
+            }
+
+            val user = UserRequest(email, newPassword, newUsername, firstName, lastName)
             accessToken?.let { token ->
                 val username = getUsernameFromToken(token)
                 if (username != null) {
