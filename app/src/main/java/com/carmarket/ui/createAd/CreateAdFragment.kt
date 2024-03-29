@@ -21,8 +21,6 @@ import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
 class CreateAdFragment : Fragment() {
 
-    //TODO brisanje slika
-
     private var binding: FragmentCreateAdBinding? = null
     private val viewModel: CreateAdViewModel by sharedViewModel()
     private var bearerToken: String? = null

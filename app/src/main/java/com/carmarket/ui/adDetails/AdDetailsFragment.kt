@@ -31,8 +31,6 @@ class AdDetailsFragment : Fragment() {
     private val followAdViewModel: FollowAdViewModel by sharedViewModel()
     private val removeAdViewModel: RemoveAdViewModel by sharedViewModel()
 
-    //TODO zasto ne radi prikaz slika
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
