@@ -28,8 +28,6 @@ import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
 class ChangeAdFragment : Fragment() {
 
-    //TODO brisanje slika
-
     private var binding: FragmentChangeAdBinding? = null
     private val adViewModel: AdDetailsViewModel by sharedViewModel()
     private val changeAdViewModel: ChangeAdViewModel by sharedViewModel()
@@ -43,6 +41,12 @@ class ChangeAdFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        val imagesRecyclerView = binding?.imagesChangeAdRecyclerView
+        val layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+        imagesRecyclerView?.layoutManager = layoutManager
+        imageAdapter = ImageAdapter(requireContext(), selectedImages)
+        imagesRecyclerView?.adapter = imageAdapter
 
         val accessToken = arguments?.getString("jwt") ?: ""
         if (accessToken.isBlank()) {
@@ -59,10 +63,6 @@ class ChangeAdFragment : Fragment() {
         } ?: showErrorDialog("Required arguments missing.")
 
         setupSpinners()
-
-        binding?.imagesChangeAdRecyclerView?.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
-        imageAdapter = ImageAdapter(requireContext(), selectedImages)
-        binding?.imagesChangeAdRecyclerView?.adapter = imageAdapter
 
         binding?.saveChangeAdButton?.setOnClickListener{
             val adId = arguments?.getLong("adId") ?: 0L
