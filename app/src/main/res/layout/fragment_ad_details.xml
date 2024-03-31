@@ -37,6 +37,7 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="20dp"
+            android:fontFamily="sans-serif-condensed-medium"
             android:text="@string/generalInformationTextView"
             android:textSize="18sp"
             android:textStyle="bold"
@@ -50,6 +51,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="20dp"
+            android:fontFamily="sans-serif-condensed-medium"
             android:visibility="gone"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/generalInformationTextView" />
@@ -60,6 +62,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="20dp"
+            android:fontFamily="sans-serif-condensed-medium"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/adIdTextView" />
 
@@ -69,6 +72,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:layout_marginEnd="20dp"
+            android:fontFamily="sans-serif-condensed-medium"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/adDetailBrandTextView" />
 
@@ -78,6 +82,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:layout_marginEnd="20dp"
+            android:fontFamily="sans-serif-condensed-medium"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/adDetailModelTextView" />
 
@@ -111,6 +116,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:layout_marginEnd="20dp"
+            android:fontFamily="sans-serif-condensed-medium"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/adDetailYearTextView" />
 
@@ -121,6 +127,7 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="15dp"
             android:layout_marginEnd="20dp"
+            android:fontFamily="sans-serif-condensed-medium"
             android:text="@string/additionalInfoTextView"
             android:textSize="18sp"
             android:textStyle="bold"
@@ -134,6 +141,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:layout_marginEnd="20dp"
+            android:fontFamily="sans-serif-condensed-medium"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/additionalInfoTextView" />
 
@@ -143,6 +151,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:layout_marginEnd="20dp"
+            android:fontFamily="sans-serif-condensed-medium"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/adDetailMileageTextView" />
 
@@ -152,6 +161,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:layout_marginEnd="20dp"
+            android:fontFamily="sans-serif-condensed-medium"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/adFuelDetailTextView" />
 
@@ -161,6 +171,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:layout_marginEnd="20dp"
+            android:fontFamily="sans-serif-condensed-medium"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/adHpDetailTextView" />
 
@@ -170,6 +181,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:layout_marginEnd="20dp"
+            android:fontFamily="sans-serif-condensed-medium"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/adKwDetailTextView" />
 
@@ -179,6 +191,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:layout_marginEnd="20dp"
+            android:fontFamily="sans-serif-condensed-medium"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/adCubicDetailTextView" />
 
@@ -188,6 +201,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:layout_marginEnd="20dp"
+            android:fontFamily="sans-serif-condensed-medium"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/adTransmissionDetailTextView" />
 
@@ -197,6 +211,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:layout_marginEnd="20dp"
+            android:fontFamily="sans-serif-condensed-medium"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/adDriveDetailTextView" />
 
@@ -206,6 +221,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:layout_marginEnd="20dp"
+            android:fontFamily="sans-serif-condensed-medium"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/adDoorNumberDetailTextView" />
 
@@ -215,6 +231,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:layout_marginEnd="20dp"
+            android:fontFamily="sans-serif-condensed-medium"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/adSeatsNumberDetailTextView" />
 
@@ -224,6 +241,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:layout_marginEnd="20dp"
+            android:fontFamily="sans-serif-condensed-medium"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/adWheelSideDetailTextView" />
 
@@ -233,6 +251,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:layout_marginEnd="20dp"
+            android:fontFamily="sans-serif-condensed-medium"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/adAirConditioningDetailTextView" />
 
@@ -242,6 +261,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:layout_marginEnd="20dp"
+            android:fontFamily="sans-serif-condensed-medium"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/adColorDetailTextView" />
 
@@ -251,6 +271,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:layout_marginEnd="20dp"
+            android:fontFamily="sans-serif-condensed-medium"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/adInteriorColorDetailTextView" />
 
@@ -260,6 +281,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="20dp"
+            android:fontFamily="sans-serif-condensed-medium"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/locationTextView" />
 
@@ -269,6 +291,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:layout_marginEnd="20dp"
+            android:fontFamily="sans-serif-condensed-medium"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/adCityDetailTextView" />
 
@@ -278,6 +301,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:layout_marginEnd="20dp"
+            android:fontFamily="sans-serif-condensed-medium"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/adCountryDetailTextView" />
 
@@ -287,6 +311,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginTop="10dp"
+            android:fontFamily="sans-serif-condensed-medium"
             android:text="@string/brandTextView"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/adIdTextView" />
@@ -297,6 +322,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginTop="5dp"
+            android:fontFamily="sans-serif-condensed-medium"
             android:text="@string/modelTextView"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/brandTextView" />
@@ -307,6 +333,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginTop="5dp"
+            android:fontFamily="sans-serif-condensed-medium"
             android:text="@string/yearTextView"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/modelTextView" />
@@ -317,6 +344,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginTop="5dp"
+            android:fontFamily="sans-serif-condensed-medium"
             android:text="@string/conditionTextView"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/yearTextView" />
@@ -327,6 +355,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginTop="5dp"
+            android:fontFamily="sans-serif-condensed-medium"
             android:text="@string/mileageTextView"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/additionalInfoTextView" />
@@ -337,6 +366,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginTop="5dp"
+            android:fontFamily="sans-serif-condensed-medium"
             android:text="@string/fuelTextView"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/mileageTextView" />
@@ -347,6 +377,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginTop="5dp"
+            android:fontFamily="sans-serif-condensed-medium"
             android:text="@string/hpTextView"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/fuelTypeTextView" />
@@ -357,6 +388,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginTop="5dp"
+            android:fontFamily="sans-serif-condensed-medium"
             android:text="@string/kwTextView"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/adHpDetailTextView" />
@@ -367,6 +399,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginTop="5dp"
+            android:fontFamily="sans-serif-condensed-medium"
             android:text="@string/cubicTextView"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/kwTextView" />
@@ -377,6 +410,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginTop="5dp"
+            android:fontFamily="sans-serif-condensed-medium"
             android:text="@string/transmissionTextView"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/cubicTextView" />
@@ -387,6 +421,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginTop="5dp"
+            android:fontFamily="sans-serif-condensed-medium"
             android:text="@string/driveTextView"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/transmissionTextView" />
@@ -397,6 +432,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginTop="5dp"
+            android:fontFamily="sans-serif-condensed-medium"
             android:text="@string/doorNumberTextView"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/driveTextView" />
@@ -407,6 +443,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginTop="5dp"
+            android:fontFamily="sans-serif-condensed-medium"
             android:text="@string/seatsNumberTextView"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/doorNumberTextView" />
@@ -417,6 +454,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginTop="5dp"
+            android:fontFamily="sans-serif-condensed-medium"
             android:text="@string/wheelSideTextView"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/seatsNumberTextView" />
@@ -427,6 +465,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginTop="5dp"
+            android:fontFamily="sans-serif-condensed-medium"
             android:text="@string/airConditioningTextView"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/wheelSideTextView" />
@@ -437,6 +476,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginTop="5dp"
+            android:fontFamily="sans-serif-condensed-medium"
             android:text="@string/colorTextView"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/airConditioningTextView" />
@@ -447,6 +487,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginTop="5dp"
+            android:fontFamily="sans-serif-condensed-medium"
             android:text="@string/interiorColorTextView"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/colorTextView" />
@@ -457,6 +498,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginTop="5dp"
+            android:fontFamily="sans-serif-condensed-medium"
             android:text="@string/registeredUntilTextView"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/interiorColorTextView" />
@@ -467,6 +509,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginTop="10dp"
+            android:fontFamily="sans-serif-condensed-medium"
             android:text="@string/cityTextView"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/locationTextView" />
@@ -477,6 +520,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginTop="5dp"
+            android:fontFamily="sans-serif-condensed-medium"
             android:text="@string/countryTextView"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/cityTextView" />
@@ -487,6 +531,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginTop="5dp"
+            android:fontFamily="sans-serif-condensed-medium"
             android:text="@string/phoneNumberTextView"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/countryTextView" />
@@ -498,6 +543,7 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="15dp"
             android:layout_marginEnd="20dp"
+            android:fontFamily="sans-serif-condensed-medium"
             android:text="@string/locationTextView"
             android:textSize="18sp"
             android:textStyle="bold"
@@ -512,6 +558,7 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="15dp"
             android:layout_marginEnd="20dp"
+            android:fontFamily="sans-serif-condensed-medium"
             android:text="@string/descriptionTextView"
             android:textSize="18sp"
             android:textStyle="bold"
@@ -525,6 +572,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginTop="10dp"
+            android:fontFamily="sans-serif-condensed-medium"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/descriptionTextView" />
 

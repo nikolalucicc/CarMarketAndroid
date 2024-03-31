@@ -17,47 +17,88 @@
             android:layout_width="200dp"
             android:layout_height="40dp"
             android:layout_marginTop="60dp"
-            android:text="Search"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:text="Pretraga"
+            android:textColor="@android:color/white"
+            app:backgroundTint="@color/dark_red"
+            app:cornerRadius="4dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/brandSearchAdTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:text="@string/brandTextView"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/searchButton" />
 
         <Spinner
             android:id="@+id/brandSearchSpinner"
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:layout_marginTop="10dp"
             android:background="@drawable/spinner_background"
+            android:fontFamily="sans-serif-condensed-medium"
             android:paddingStart="7dp"
             android:paddingEnd="16dp"
             android:spinnerMode="dialog"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/searchButton" />
+            app:layout_constraintTop_toBottomOf="@+id/brandSearchAdTextView" />
+
+        <TextView
+            android:id="@+id/modelSearchAdTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:text="@string/modelTextView"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/brandSearchSpinner" />
 
         <EditText
             android:id="@+id/modelSearchEditText"
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:layout_marginTop="10dp"
             android:autofillHints="model"
             android:background="@drawable/spinner_background"
-            android:hint="@string/modelTextView"
+            android:fontFamily="sans-serif-condensed-medium"
             android:inputType="text"
             android:paddingStart="16dp"
             android:paddingEnd="16dp"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/brandSearchSpinner" />
+            app:layout_constraintTop_toBottomOf="@+id/modelSearchAdTextView" />
+
+        <TextView
+            android:id="@+id/minYearSearchAdTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:text="@string/minYearHint"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/modelSearchEditText" />
 
         <Spinner
             android:id="@+id/minYearSearchSpinner"
             android:layout_width="0dp"
             android:layout_height="40dp"
-            android:layout_marginTop="10dp"
             android:background="@drawable/spinner_background"
+            android:fontFamily="sans-serif-condensed-medium"
             android:paddingStart="7dp"
             android:paddingEnd="16dp"
             android:spinnerMode="dialog"
@@ -65,16 +106,28 @@
             app:layout_constraintHorizontal_bias="0.25"
             app:layout_constraintHorizontal_chainStyle="packed"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/modelSearchEditText"
+            app:layout_constraintTop_toBottomOf="@+id/minYearSearchAdTextView"
             app:layout_constraintWidth_default="wrap"
             app:layout_constraintWidth_percent="0.45" />
+
+        <TextView
+            android:id="@+id/maxYearSearchAdTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:text="@string/maxYearHint"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/maxYearSearchSpinner"
+            app:layout_constraintTop_toBottomOf="@id/modelSearchEditText" />
 
         <Spinner
             android:id="@+id/maxYearSearchSpinner"
             android:layout_width="0dp"
             android:layout_height="40dp"
-            android:layout_marginTop="10dp"
             android:background="@drawable/spinner_background"
+            android:fontFamily="sans-serif-condensed-medium"
             android:paddingStart="7dp"
             android:paddingEnd="16dp"
             android:spinnerMode="dialog"
@@ -83,18 +136,29 @@
             app:layout_constraintHorizontal_bias="1"
             app:layout_constraintHorizontal_chainStyle="packed"
             app:layout_constraintStart_toEndOf="@+id/minYearSearchSpinner"
-            app:layout_constraintTop_toBottomOf="@+id/modelSearchEditText"
+            app:layout_constraintTop_toBottomOf="@+id/maxYearSearchAdTextView"
             app:layout_constraintWidth_default="wrap"
             app:layout_constraintWidth_percent="0.45" />
+
+        <TextView
+            android:id="@+id/minPriceSearchAdTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:text="@string/minPriceText"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/minYearSearchSpinner" />
 
         <EditText
             android:id="@+id/minPriceSearchEditText"
             android:layout_width="0dp"
             android:layout_height="40dp"
-            android:layout_marginTop="10dp"
             android:autofillHints=""
             android:background="@drawable/spinner_background"
-            android:hint="@string/minPriceText"
+            android:fontFamily="sans-serif-condensed-medium"
             android:inputType="number"
             android:paddingStart="16dp"
             android:paddingEnd="16dp"
@@ -102,18 +166,29 @@
             app:layout_constraintHorizontal_bias="0.25"
             app:layout_constraintHorizontal_chainStyle="packed"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/minYearSearchSpinner"
+            app:layout_constraintTop_toBottomOf="@+id/minPriceSearchAdTextView"
             app:layout_constraintWidth_default="wrap"
             app:layout_constraintWidth_percent="0.45" />
+
+        <TextView
+            android:id="@+id/maxPriceSearchAdTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:text="@string/maxPriceText"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/maxPriceSearchEditText"
+            app:layout_constraintTop_toBottomOf="@id/maxYearSearchSpinner" />
 
         <EditText
             android:id="@+id/maxPriceSearchEditText"
             android:layout_width="0dp"
             android:layout_height="40dp"
-            android:layout_marginTop="10dp"
             android:autofillHints=""
             android:background="@drawable/spinner_background"
-            android:hint="@string/maxPriceText"
+            android:fontFamily="sans-serif-condensed-medium"
             android:inputType="number"
             android:paddingStart="16dp"
             android:paddingEnd="16dp"
@@ -122,78 +197,139 @@
             app:layout_constraintHorizontal_bias="1"
             app:layout_constraintHorizontal_chainStyle="packed"
             app:layout_constraintStart_toEndOf="@+id/minYearSearchSpinner"
-            app:layout_constraintTop_toBottomOf="@+id/maxYearSearchSpinner"
+            app:layout_constraintTop_toBottomOf="@+id/maxPriceSearchAdTextView"
             app:layout_constraintWidth_default="wrap"
             app:layout_constraintWidth_percent="0.45" />
+
+        <TextView
+            android:id="@+id/carBodySearchAdTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:text="@string/carBodyHint"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/maxPriceSearchEditText" />
 
         <Spinner
             android:id="@+id/carBodySearchSpinner"
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:layout_marginTop="10dp"
             android:background="@drawable/spinner_background"
+            android:fontFamily="sans-serif-condensed-medium"
             android:paddingStart="7dp"
             android:paddingEnd="16dp"
             android:spinnerMode="dialog"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/minPriceSearchEditText" />
+            app:layout_constraintTop_toBottomOf="@+id/carBodySearchAdTextView" />
+
+        <TextView
+            android:id="@+id/conditionSearchAdTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:text="@string/conditionTextView"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/carBodySearchSpinner" />
 
         <Spinner
             android:id="@+id/conditionSearchSpinner"
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:layout_marginTop="10dp"
             android:background="@drawable/spinner_background"
+            android:fontFamily="sans-serif-condensed-medium"
             android:paddingStart="7dp"
             android:paddingEnd="16dp"
             android:spinnerMode="dialog"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/carBodySearchSpinner" />
+            app:layout_constraintTop_toBottomOf="@+id/conditionSearchAdTextView" />
+
+        <TextView
+            android:id="@+id/citySearchAdTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:text="@string/cityHint"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/conditionSearchSpinner" />
 
         <EditText
             android:id="@+id/citySearchEditText"
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:layout_marginTop="10dp"
             android:autofillHints="model"
             android:background="@drawable/spinner_background"
-            android:hint="@string/cityTextView"
+            android:fontFamily="sans-serif-condensed-medium"
             android:inputType="text"
             android:paddingStart="16dp"
             android:paddingEnd="16dp"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/conditionSearchSpinner" />
+            app:layout_constraintTop_toBottomOf="@+id/citySearchAdTextView" />
+
+        <TextView
+            android:id="@+id/countrySearchAdTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:text="@string/countryHint"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/citySearchEditText" />
 
         <EditText
             android:id="@+id/countrySearchEditText"
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:layout_marginTop="10dp"
             android:autofillHints="model"
             android:background="@drawable/spinner_background"
-            android:hint="@string/countryTextView"
+            android:fontFamily="sans-serif-condensed-medium"
             android:inputType="text"
             android:paddingStart="16dp"
             android:paddingEnd="16dp"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/citySearchEditText" />
+            app:layout_constraintTop_toBottomOf="@+id/countrySearchAdTextView" />
+
+        <TextView
+            android:id="@+id/minMileageSearchAdTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:text="@string/minMileageText"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/countrySearchEditText" />
 
         <EditText
             android:id="@+id/minMileageSearchEditText"
             android:layout_width="0dp"
             android:layout_height="40dp"
-            android:layout_marginTop="10dp"
             android:autofillHints=""
             android:background="@drawable/spinner_background"
-            android:hint="@string/minMileageText"
+            android:fontFamily="sans-serif-condensed-medium"
             android:inputType="number"
             android:paddingStart="16dp"
             android:paddingEnd="16dp"
@@ -201,18 +337,29 @@
             app:layout_constraintHorizontal_bias="0.25"
             app:layout_constraintHorizontal_chainStyle="packed"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/countrySearchEditText"
+            app:layout_constraintTop_toBottomOf="@+id/minMileageSearchAdTextView"
             app:layout_constraintWidth_default="wrap"
             app:layout_constraintWidth_percent="0.45" />
+
+        <TextView
+            android:id="@+id/maxMileageSearchAdTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:text="@string/maxMileageText"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/maxMileageSearchEditText"
+            app:layout_constraintTop_toBottomOf="@id/countrySearchEditText" />
 
         <EditText
             android:id="@+id/maxMileageSearchEditText"
             android:layout_width="0dp"
             android:layout_height="40dp"
-            android:layout_marginTop="10dp"
             android:autofillHints=""
             android:background="@drawable/spinner_background"
-            android:hint="@string/maxMileageText"
+            android:fontFamily="sans-serif-condensed-medium"
             android:inputType="number"
             android:paddingStart="16dp"
             android:paddingEnd="16dp"
@@ -221,32 +368,56 @@
             app:layout_constraintHorizontal_bias="1"
             app:layout_constraintHorizontal_chainStyle="packed"
             app:layout_constraintStart_toEndOf="@+id/minMileageSearchEditText"
-            app:layout_constraintTop_toBottomOf="@+id/countrySearchEditText"
+            app:layout_constraintTop_toBottomOf="@+id/maxMileageSearchAdTextView"
             app:layout_constraintWidth_default="wrap"
             app:layout_constraintWidth_percent="0.45" />
+
+        <TextView
+            android:id="@+id/fuelSearchEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:text="@string/fuelTextView"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/minMileageSearchEditText" />
 
         <Spinner
             android:id="@+id/fuelSearchSpinner"
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:layout_marginTop="10dp"
             android:background="@drawable/spinner_background"
+            android:fontFamily="sans-serif-condensed-medium"
             android:paddingStart="7dp"
             android:paddingEnd="16dp"
             android:spinnerMode="dialog"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/maxMileageSearchEditText" />
+            app:layout_constraintTop_toBottomOf="@+id/fuelSearchEditText" />
+
+        <TextView
+            android:id="@+id/minEngineCubicSearchAdTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:text="@string/minYearHint"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/fuelSearchSpinner" />
 
         <EditText
             android:id="@+id/minEngineCubicSearchEditText"
             android:layout_width="0dp"
             android:layout_height="40dp"
-            android:layout_marginTop="10dp"
             android:autofillHints=""
             android:background="@drawable/spinner_background"
-            android:hint="@string/minEngineCubicText"
+            android:fontFamily="sans-serif-condensed-medium"
             android:inputType="number"
             android:paddingStart="16dp"
             android:paddingEnd="16dp"
@@ -254,18 +425,29 @@
             app:layout_constraintHorizontal_bias="0.25"
             app:layout_constraintHorizontal_chainStyle="packed"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/fuelSearchSpinner"
+            app:layout_constraintTop_toBottomOf="@+id/minEngineCubicSearchAdTextView"
             app:layout_constraintWidth_default="wrap"
             app:layout_constraintWidth_percent="0.45" />
+
+        <TextView
+            android:id="@+id/maxEngineCubicSearchAdTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:text="@string/maxEngineCubicText"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/maxEngineCubicSearchEditText"
+            app:layout_constraintTop_toBottomOf="@id/fuelSearchSpinner" />
 
         <EditText
             android:id="@+id/maxEngineCubicSearchEditText"
             android:layout_width="0dp"
             android:layout_height="40dp"
-            android:layout_marginTop="10dp"
             android:autofillHints=""
             android:background="@drawable/spinner_background"
-            android:hint="@string/maxEngineCubicText"
+            android:fontFamily="sans-serif-condensed-medium"
             android:inputType="number"
             android:paddingStart="16dp"
             android:paddingEnd="16dp"
@@ -274,18 +456,29 @@
             app:layout_constraintHorizontal_bias="1"
             app:layout_constraintHorizontal_chainStyle="packed"
             app:layout_constraintStart_toEndOf="@+id/minMileageSearchEditText"
-            app:layout_constraintTop_toBottomOf="@+id/fuelSearchSpinner"
+            app:layout_constraintTop_toBottomOf="@+id/maxEngineCubicSearchAdTextView"
             app:layout_constraintWidth_default="wrap"
             app:layout_constraintWidth_percent="0.45" />
+
+        <TextView
+            android:id="@+id/minHPSearchAdTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:text="@string/minHPText"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/maxEngineCubicSearchEditText" />
 
         <EditText
             android:id="@+id/minHPSearchEditText"
             android:layout_width="0dp"
             android:layout_height="40dp"
-            android:layout_marginTop="10dp"
             android:autofillHints=""
             android:background="@drawable/spinner_background"
-            android:hint="@string/minHPText"
+            android:fontFamily="sans-serif-condensed-medium"
             android:inputType="number"
             android:paddingStart="16dp"
             android:paddingEnd="16dp"
@@ -293,18 +486,29 @@
             app:layout_constraintHorizontal_bias="0.25"
             app:layout_constraintHorizontal_chainStyle="packed"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/minEngineCubicSearchEditText"
+            app:layout_constraintTop_toBottomOf="@+id/minHPSearchAdTextView"
             app:layout_constraintWidth_default="wrap"
             app:layout_constraintWidth_percent="0.45" />
+
+        <TextView
+            android:id="@+id/maxHPSearchAdTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:text="@string/maxHPText"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/maxHPSearchEditText"
+            app:layout_constraintTop_toBottomOf="@id/maxEngineCubicSearchEditText" />
 
         <EditText
             android:id="@+id/maxHPSearchEditText"
             android:layout_width="0dp"
             android:layout_height="40dp"
-            android:layout_marginTop="10dp"
             android:autofillHints=""
             android:background="@drawable/spinner_background"
-            android:hint="@string/maxHPText"
+            android:fontFamily="sans-serif-condensed-medium"
             android:inputType="number"
             android:paddingStart="16dp"
             android:paddingEnd="16dp"
@@ -313,179 +517,318 @@
             app:layout_constraintHorizontal_bias="1"
             app:layout_constraintHorizontal_chainStyle="packed"
             app:layout_constraintStart_toEndOf="@+id/minHPSearchEditText"
-            app:layout_constraintTop_toBottomOf="@+id/maxEngineCubicSearchEditText"
+            app:layout_constraintTop_toBottomOf="@+id/maxHPSearchAdTextView"
             app:layout_constraintWidth_default="wrap"
             app:layout_constraintWidth_percent="0.45" />
+
+        <TextView
+            android:id="@+id/minKWSearchAdTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:text="@string/minKWText"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/minHPSearchEditText"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/maxHPSearchEditText" />
 
         <EditText
             android:id="@+id/minKwSearchEditText"
             android:layout_width="0dp"
             android:layout_height="40dp"
-            android:layout_marginTop="10dp"
             android:autofillHints=""
             android:background="@drawable/spinner_background"
+            android:fontFamily="sans-serif-condensed-medium"
             android:inputType="number"
             android:paddingStart="16dp"
             android:paddingEnd="16dp"
             android:textSize="16sp"
-            android:hint="@string/minKWText"
             app:layout_constraintHorizontal_bias="0.25"
             app:layout_constraintHorizontal_chainStyle="packed"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/minHPSearchEditText"
+            app:layout_constraintTop_toBottomOf="@+id/minKWSearchAdTextView"
             app:layout_constraintWidth_default="wrap"
             app:layout_constraintWidth_percent="0.45" />
+
+        <TextView
+            android:id="@+id/maxKWSearchAdTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:text="@string/maxKWText"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/maxKwSearchEditText"
+            app:layout_constraintTop_toBottomOf="@id/maxHPSearchEditText" />
 
         <EditText
             android:id="@+id/maxKwSearchEditText"
             android:layout_width="0dp"
             android:layout_height="40dp"
-            android:layout_marginTop="10dp"
             android:autofillHints=""
             android:background="@drawable/spinner_background"
+            android:fontFamily="sans-serif-condensed-medium"
             android:inputType="number"
             android:paddingStart="16dp"
             android:paddingEnd="16dp"
-            android:hint="@string/maxKWText"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1"
             app:layout_constraintHorizontal_chainStyle="packed"
             app:layout_constraintStart_toEndOf="@+id/minKwSearchEditText"
-            app:layout_constraintTop_toBottomOf="@+id/maxHPSearchEditText"
+            app:layout_constraintTop_toBottomOf="@+id/maxKWSearchAdTextView"
             app:layout_constraintWidth_default="wrap"
             app:layout_constraintWidth_percent="0.45" />
+
+        <TextView
+            android:id="@+id/transmissionSearchEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:text="@string/transmissionTextView"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/minKwSearchEditText" />
 
         <Spinner
             android:id="@+id/transmissionSearchSpinner"
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:layout_marginTop="10dp"
             android:background="@drawable/spinner_background"
+            android:fontFamily="sans-serif-condensed-medium"
             android:paddingStart="7dp"
             android:paddingEnd="16dp"
             android:spinnerMode="dialog"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/minKwSearchEditText" />
+            app:layout_constraintTop_toBottomOf="@+id/transmissionSearchEditText" />
+
+        <TextView
+            android:id="@+id/driveSearchEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:text="@string/driveTextView"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/transmissionSearchSpinner" />
 
         <Spinner
             android:id="@+id/driveSearchSpinner"
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:layout_marginTop="10dp"
             android:background="@drawable/spinner_background"
+            android:fontFamily="sans-serif-condensed-medium"
             android:paddingStart="7dp"
             android:paddingEnd="16dp"
             android:spinnerMode="dialog"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/transmissionSearchSpinner" />
+            app:layout_constraintTop_toBottomOf="@+id/driveSearchEditText" />
+
+        <TextView
+            android:id="@+id/doorsNumberSearchEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:text="@string/doorNumberTextView"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/driveSearchSpinner" />
 
         <Spinner
             android:id="@+id/doorsNumberSearchSpinner"
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:layout_marginTop="10dp"
             android:background="@drawable/spinner_background"
+            android:fontFamily="sans-serif-condensed-medium"
             android:paddingStart="7dp"
             android:paddingEnd="16dp"
             android:spinnerMode="dialog"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/driveSearchSpinner" />
+            app:layout_constraintTop_toBottomOf="@+id/doorsNumberSearchEditText" />
+
+        <TextView
+            android:id="@+id/seatsNumberSearchEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:text="@string/seatsNumberTextView"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/doorsNumberSearchSpinner" />
 
         <Spinner
             android:id="@+id/seatsNumberSearchSpinner"
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:layout_marginTop="10dp"
             android:background="@drawable/spinner_background"
+            android:fontFamily="sans-serif-condensed-medium"
             android:paddingStart="7dp"
             android:paddingEnd="16dp"
             android:spinnerMode="dialog"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/doorsNumberSearchSpinner" />
+            app:layout_constraintTop_toBottomOf="@+id/seatsNumberSearchEditText" />
+
+        <TextView
+            android:id="@+id/wheelSideSearchEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:text="@string/wheelSideTextView"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/seatsNumberSearchSpinner" />
 
         <Spinner
             android:id="@+id/wheelSideSearchSpinner"
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:layout_marginTop="10dp"
             android:background="@drawable/spinner_background"
+            android:fontFamily="sans-serif-condensed-medium"
             android:paddingStart="7dp"
             android:paddingEnd="16dp"
             android:spinnerMode="dialog"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/seatsNumberSearchSpinner" />
+            app:layout_constraintTop_toBottomOf="@+id/wheelSideSearchEditText" />
+
+        <TextView
+            android:id="@+id/airConditioningSearchEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:text="@string/airConditioningTextView"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/wheelSideSearchSpinner" />
 
         <Spinner
             android:id="@+id/airConditioningSearchSpinner"
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:layout_marginTop="10dp"
             android:background="@drawable/spinner_background"
+            android:fontFamily="sans-serif-condensed-medium"
             android:paddingStart="7dp"
             android:paddingEnd="16dp"
             android:spinnerMode="dialog"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/wheelSideSearchSpinner" />
+            app:layout_constraintTop_toBottomOf="@+id/airConditioningSearchEditText" />
+
+        <TextView
+            android:id="@+id/registrationSearchTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:text="@string/registeredUntilHint"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/airConditioningSearchSpinner" />
 
         <EditText
             android:id="@+id/registrationSearchEditText"
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:layout_marginTop="10dp"
             android:autofillHints="model"
             android:background="@drawable/spinner_background"
-            android:hint="@string/registeredUntilTextView"
+            android:fontFamily="sans-serif-condensed-medium"
             android:inputType="text"
             android:paddingStart="16dp"
             android:paddingEnd="16dp"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/airConditioningSearchSpinner" />
+            app:layout_constraintTop_toBottomOf="@+id/registrationSearchTextView" />
+
+        <TextView
+            android:id="@+id/colorSearchTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:text="@string/colorTextView"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/registrationSearchEditText" />
 
         <Spinner
             android:id="@+id/colorSearchSpinner"
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:layout_marginTop="10dp"
             android:autofillHints="model"
             android:background="@drawable/spinner_background"
+            android:fontFamily="sans-serif-condensed-medium"
             android:inputType="text"
             android:paddingStart="16dp"
             android:paddingEnd="16dp"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/registrationSearchEditText" />
+            app:layout_constraintTop_toBottomOf="@+id/colorSearchTextView" />
+
+        <TextView
+            android:id="@+id/interiorColorSearchTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:text="@string/interiorColorTextView"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/colorSearchSpinner" />
 
         <Spinner
             android:id="@+id/interiorColorSearchSpinner"
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
             android:autofillHints="model"
             android:background="@drawable/spinner_background"
+            android:fontFamily="sans-serif-condensed-medium"
             android:inputType="text"
             android:paddingStart="16dp"
             android:paddingEnd="16dp"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/colorSearchSpinner" />
+            app:layout_constraintTop_toBottomOf="@+id/interiorColorSearchTextView" />
 
         <EditText
             android:id="@+id/phoneNumber"
@@ -494,12 +837,13 @@
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
             android:autofillHints="model"
-            android:visibility="visible"
             android:background="@drawable/spinner_background"
+            android:fontFamily="sans-serif-condensed-medium"
             android:inputType="phone"
             android:paddingStart="16dp"
             android:paddingEnd="16dp"
             android:textSize="16sp"
+            android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
