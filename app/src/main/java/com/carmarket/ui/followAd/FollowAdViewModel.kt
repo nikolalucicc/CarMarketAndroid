@@ -55,10 +55,10 @@ class FollowAdViewModel(
         }
     }
 
-    fun deleteFromFavorites(adId: Long, bearerToken: String) {
+    fun deleteFromFavorites(userId: Long, adId: Long, bearerToken: String) {
         viewModelScope.launch {
             runCatching {
-                repository.deleteFromFavorites(adId, bearerToken)
+                repository.deleteFromFavorites(userId, adId, bearerToken)
             }.onFailure { exception ->
                 val errorMessage = exception.message ?: "Unknown error"
                 Log.e("FollowAdViewModel", "Error deleting ad from favorites: $errorMessage")
@@ -66,14 +66,13 @@ class FollowAdViewModel(
         }
     }
 
-    suspend fun isAdFollowed(adId: Long, bearerToken: String): Boolean {
-        return try {
-            val ads = repository.getFollowingAds(getUserIdFromToken(bearerToken) ?: -1, bearerToken)
-            ads.any { it.ad.id == adId }
-        } catch (exception: Exception) {
-            val errorMessage = exception.message ?: "Unknown error"
-            Log.e("FollowAdViewModel", "Error checking if ad is followed: $errorMessage")
-            false
+    fun isAdFollowed(adId: Long): Boolean {
+        return when (val currentState = followAdUiDataState.value) {
+            is FollowAdUIState.Success -> {
+                val ads = currentState.followAd
+                ads.any { it.ad.id == adId }
+            }
+            else -> false
         }
     }
 

@@ -44,11 +44,9 @@ class FollowAdFragment : Fragment() {
             isNestedScrollingEnabled
         }
 
-        //TODO prosledjuje se followedId ali ne radi dugme kada se predje u details
-        adapter = FollowAdsAdapter(emptyList()) { adId, followedAdId ->
+        adapter = FollowAdsAdapter(emptyList()) { adId, _ ->
             val bundle = Bundle()
             bundle.putLong("adId", adId)
-            bundle.putLong("followedAdId", followedAdId)
             findNavController().navigate(R.id.action_followAdFragment_to_adDetailsFragment, bundle)
         }
 

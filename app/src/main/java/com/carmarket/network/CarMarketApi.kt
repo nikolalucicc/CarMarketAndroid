@@ -74,8 +74,8 @@ interface CarMarketApi {
     @GET("/favorite/favoriteByUser/{id}")
     suspend fun getFollowingAds(@Path("id") id: Long, @Header("Authorization") bearerToken: String) : Response<List<FollowAdResponseBody>>
 
-    @DELETE("/favorite/delete/{id}")
-    suspend fun deleteFromFavorites(@Path("id") id: Long, @Header("Authorization") bearerToken: String)
+    @DELETE("/favorite/delete/{userId}/{adId}")
+    suspend fun deleteFromFavorites(@Path("userId") userId: Long, @Path("adId") adId: Long, @Header("Authorization") bearerToken: String)
 
     @PUT("/ad/update/{id}")
     suspend fun changeAd(@Body adRequest: AdRequest, @Path("id") id: Long, @Header("Authorization") bearerToken: String)

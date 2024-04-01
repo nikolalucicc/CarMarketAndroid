@@ -48,6 +48,11 @@ class MainActivity : AppCompatActivity() {
                             binding.toolbar.changeAdButton.visibility = View.GONE
                             binding.toolbar.removeAdButton.visibility = View.GONE
                         }
+                        R.id.followAdFragment -> {
+                            binding.toolbar.followAdButton.visibility = View.VISIBLE
+                            binding.toolbar.changeAdButton.visibility = View.GONE
+                            binding.toolbar.removeAdButton.visibility = View.GONE
+                        }
                         R.id.adsByUserFragment -> {
                             binding.toolbar.followAdButton.visibility = View.GONE
                             binding.toolbar.changeAdButton.visibility = View.VISIBLE
