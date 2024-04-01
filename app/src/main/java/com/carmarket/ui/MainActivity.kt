@@ -82,8 +82,7 @@ class MainActivity : AppCompatActivity() {
     private fun ActivityMainBinding.setUpDrawerLayout() {
         toolbar.menuButton.setOnClickListener { drawerLayout.openDrawer(GravityCompat.START) }
 
-        val accessToken = getAccessToken()
-        val isUserLoggedIn = accessToken.isNotEmpty()
+        val isUserLoggedIn = isUserLoggedIn()
 
         navigationView.menu.apply {
             findItem(R.id.nav_login).isVisible = !isUserLoggedIn
@@ -163,6 +162,11 @@ class MainActivity : AppCompatActivity() {
                 else -> false
             }
         }
+    }
+
+    private fun isUserLoggedIn(): Boolean {
+        val sharedPreferences = applicationContext.getSharedPreferences("com.carmarket", Context.MODE_PRIVATE)
+        return sharedPreferences.getBoolean("isUserLoggedIn", false)
     }
 
     private fun getAccessToken(): String {
