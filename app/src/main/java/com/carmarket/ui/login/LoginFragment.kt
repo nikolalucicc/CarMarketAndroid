@@ -92,7 +92,11 @@ class LoginFragment : Fragment() {
 
     private fun saveAccessTokenToSharedPreferences(accessToken: String) {
         val sharedPreferences = requireContext().getSharedPreferences("com.carmarket", Context.MODE_PRIVATE)
-        sharedPreferences.edit().putString("accessToken", accessToken).apply()
+        sharedPreferences.edit().apply {
+            putString("accessToken", accessToken)
+            putBoolean("isUserLoggedIn", true)
+            apply()
+        }
     }
 
     private fun hideKeyboard() {
@@ -126,10 +130,6 @@ class LoginFragment : Fragment() {
                 dialog.dismiss()
             }
             .show()
-    }
-
-    fun getAccessToken(): String {
-        return _accessToken.value ?: ""
     }
 
     override fun onDestroyView() {
