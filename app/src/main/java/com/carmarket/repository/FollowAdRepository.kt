@@ -22,9 +22,9 @@ class FollowAdRepository(
             requireNotNull(it.body()) { "The response body is null." }
         }.getOrThrow()
 
-    suspend fun deleteFromFavorites(id: Long, bearerToken: String?): Unit =
+    suspend fun deleteFromFavorites(userId: Long, adId: Long, bearerToken: String?): Unit =
         api.runCatching {
-            deleteFromFavorites(id, "Bearer $bearerToken")
+            deleteFromFavorites(userId, adId, "Bearer $bearerToken")
         }.getOrElse {
             throw it
         }

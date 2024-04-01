@@ -40,7 +40,6 @@ class AdDetailsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val adId = arguments?.getLong("adId") ?: -1
-        val followedAdId = arguments?.getLong("followedAdId") ?: -1
         val jwt = arguments?.getString("jwt") ?: ""
 
         if (adId != -1L) {
@@ -59,10 +58,10 @@ class AdDetailsFragment : Fragment() {
             val jwt = arguments?.getString("jwt", "")
             if (adId != -1L && !jwt.isNullOrEmpty()) {
                 lifecycleScope.launch {
-                    val isAdFollowed = followAdViewModel.isAdFollowed(adId, getUserIdFromJWT(jwt))
+                    val isAdFollowed = followAdViewModel.isAdFollowed(adId)
 
                     if (isAdFollowed) {
-                        followAdViewModel.deleteFromFavorites(followedAdId, getUserIdFromJWT(jwt))
+                        followAdViewModel.deleteFromFavorites(getUserIdFromJWT(jwt).toLong(), adId, jwt)
                         Toast.makeText(requireContext(), "Oglas je uspešno otpraćen!", Toast.LENGTH_SHORT).show()
                     } else {
                         val followAdRequest = FollowAdRequest(getUserIdFromJWT(jwt), adId)
