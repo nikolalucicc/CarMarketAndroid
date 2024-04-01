@@ -148,12 +148,46 @@ class CreateAdFragment : Fragment() {
             imageUrls = selectedImages
         )
 
-        viewModel.createAd(adRequest, bearerToken)
+        viewModel.createAd(adRequest, bearerToken) {
+            clearFields()
+            Toast.makeText(requireContext(), "Oglas je uspešno sačuvan.", Toast.LENGTH_SHORT).show()
+        }
     }
 
     private fun openImagePicker() {
         val intent = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
         imagePickerLauncher.launch(intent)
+    }
+
+    private fun clearFields() {
+        binding?.descriptionAdEditText?.text = null
+        binding?.modelCreateAdEditText?.text = null
+        binding?.priceCreateAdEditText?.text = null
+        binding?.mileageCreateAdEditText?.text = null
+        binding?.engineHpCreateAdEditText?.text = null
+        binding?.engineKwCreateAdEditText?.text = null
+        binding?.engineCubicCreateAdEditText?.text = null
+        binding?.registeredUntilCreateAdEditText?.text = null
+        binding?.cityCreateAdEditText?.text = null
+        binding?.countryCreateAdEditText?.text = null
+        binding?.phoneNumberAdEditText?.text = null
+
+        binding?.brandCreateAdSpinner?.setSelection(0)
+        binding?.carBodyCreateAdSpinner?.setSelection(0)
+        binding?.yearCreateAdSpinner?.setSelection(0)
+        binding?.conditionCreateAdSpinner?.setSelection(0)
+        binding?.fuelCreateAdSpinner?.setSelection(0)
+        binding?.transmissionCreateAdSpinner?.setSelection(0)
+        binding?.driveCreateAdSpinner?.setSelection(0)
+        binding?.doorsNumberCreateAdSpinner?.setSelection(0)
+        binding?.seatsNumberCreateAdSpinner?.setSelection(0)
+        binding?.wheelSideCreateAdSpinner?.setSelection(0)
+        binding?.airConditioningCreateAdSpinner?.setSelection(0)
+        binding?.colorCreateAdSpinner?.setSelection(0)
+        binding?.interiorColorCreateAdSpinner?.setSelection(0)
+
+        selectedImages.clear()
+        binding?.imagesCreateAdRecyclerView?.adapter?.notifyDataSetChanged()
     }
 
     private fun showErrorDialog(message: String) {

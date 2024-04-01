@@ -210,7 +210,7 @@ class ChangeAdFragment : Fragment() {
         val carBodyIndex = findItemIndexInSpinner(carBodyChangeAdSpinner, data.carBody)
         carBodyChangeAdSpinner.setSelection(carBodyIndex)
 
-        val yearIndex = findItemIndexInSpinner(yearChangeAdSpinner, data.year)
+        val yearIndex = findItemIndexInSpinner(yearChangeAdSpinner, data.year.toString())
         yearChangeAdSpinner.setSelection(yearIndex)
 
         priceChangeAdEditText.setText(data.price.toString())

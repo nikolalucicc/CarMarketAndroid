@@ -15,7 +15,7 @@ class CreateAdViewModel(
 
     private val adUIState: MutableStateFlow<OneAdUIState> = MutableStateFlow(OneAdUIState.Loading)
 
-    fun createAd(adRequest: AdRequest, bearerToken: String?) {
+    fun createAd(adRequest: AdRequest, bearerToken: String?, onSuccess: (Boolean) -> Unit) {
         viewModelScope.launch {
             adUIState.value = OneAdUIState.Loading
             runCatching {
@@ -23,12 +23,15 @@ class CreateAdViewModel(
             }.fold(
                 onSuccess = { response ->
                     adUIState.value = OneAdUIState.Success(response)
+                    onSuccess(true)
                 },
                 onFailure = { exception ->
                     adUIState.value = OneAdUIState.Error(exception.message ?: "Unknown error")
+                    onSuccess(false)
                 }
             )
         }
     }
+
 }
 
