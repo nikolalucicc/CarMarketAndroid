@@ -8,7 +8,7 @@
     <string name="nav_login">Login</string>
     <string name="nav_registration">Registracija</string>
     <string name="nav_create_ad">Kreiranje oglasa</string>
-    <string name="nav_users_ads">Vasi oglasi</string>
+    <string name="nav_users_ads">Vaši oglasi</string>
     <string name="nav_profile">Profil</string>
     <string name="nav_following_ads">Oglasi koje pratite</string>
 
@@ -16,18 +16,18 @@
     <string name="errorMessage">An error occurred. Please restart application.</string>
     <string name="ok">OK</string>
 
-    <string name="generalInformationTextView">Opste informacije</string>
+    <string name="generalInformationTextView">Opšte informacije</string>
     <string name="brandTextView">Brend</string>
     <string name="modelTextView">Model</string>
     <string name="yearTextView">Godina proizvodnje</string>
     <string name="conditionTextView">Stanje</string>
     <string name="additionalInfoTextView">Dodatne informacije</string>
-    <string name="mileageTextView">Kilometraza</string>
+    <string name="mileageTextView">Kilometraža</string>
     <string name="fuelTextView">Tip goriva</string>
     <string name="hpTextView">KS</string>
     <string name="kwTextView">KW</string>
-    <string name="cubicTextView">Kubikaza</string>
-    <string name="transmissionTextView">Vrsta menjaca</string>
+    <string name="cubicTextView">Kubikaža</string>
+    <string name="transmissionTextView">Vrsta menjača</string>
     <string name="locationTextView">Lokacija</string>
     <string name="cityTextView">Grad</string>
     <string name="countryTextView">Drzava</string>
@@ -35,7 +35,7 @@
     <string name="priceTextView">Cena: </string>
     <string name="driveTextView">Tip pogona</string>
     <string name="doorNumberTextView">Broj vrata</string>
-    <string name="seatsNumberTextView">Broj sedista</string>
+    <string name="seatsNumberTextView">Broj sedišta</string>
     <string name="wheelSideTextView">Strana volana</string>
     <string name="airConditioningTextView">Tip klime</string>
     <string name="colorTextView">Boja</string>
@@ -54,14 +54,14 @@
     <string name="cubic">%1$d cm³</string>
     <string name="price">%1$d €</string>
 
-    <string name="sortByYearDesc">Godini proizvodnje opadajuce</string>
-    <string name="sortByYearAsc">Godini proizvodnje rastuce</string>
-    <string name="sortByPriceDesc">Ceni opadajuce</string>
-    <string name="sortByPriceAsc">Ceni rastuce</string>
-    <string name="sortByMileageDesc">Kilometrazi opadajuce</string>
-    <string name="sortByMileageAsc">Kilometrazi rastuce</string>
-    <string name="sortByPostedDateDesc">Datumu postavljanja opadajuce</string>
-    <string name="sortByPostedDateAsc">Datumu postavljanja rastuce</string>
+    <string name="sortByYearDesc">Godini proizvodnje opadajuće</string>
+    <string name="sortByYearAsc">Godini proizvodnje rastuće</string>
+    <string name="sortByPriceDesc">Ceni opadajuće</string>
+    <string name="sortByPriceAsc">Ceni rastuće</string>
+    <string name="sortByMileageDesc">Kilometraži opadajuće</string>
+    <string name="sortByMileageAsc">Kilometraži rastuće</string>
+    <string name="sortByPostedDateDesc">Datumu postavljanja opadajuće</string>
+    <string name="sortByPostedDateAsc">Datumu postavljanja rastuće</string>
     <string name="basicSort">Osnovno</string>
 
     <string name="registration">Registracija</string>
@@ -69,21 +69,21 @@
     <string name="lastName">Prezime</string>
     <string name="email">Email</string>
     <string name="username">Username</string>
-    <string name="password">Sifra</string>
-    <string name="repeatedPassword">Ponovite sifru</string>
+    <string name="password">Šifra</string>
+    <string name="repeatedPassword">Ponovite šifru</string>
 
     <string name="loginHint">Vec imate nalog? Ulogujte se!</string>
     <string name="login">Uloguj se</string>
 
     <string name="modelHint">Naziv modela</string>
     <string name="priceHint">Cena</string>
-    <string name="mileageHint">Kilometraza</string>
-    <string name="cubicHint">Kubikaza</string>
+    <string name="mileageHint">Kilometraža</string>
+    <string name="cubicHint">Kubikaža</string>
     <string name="hpHint">Snaga KS</string>
     <string name="kwHint">Snaga kW</string>
     <string name="registeredUntilHint">Trajanje registracije (format 01.2024)</string>
     <string name="cityHint">Grad</string>
-    <string name="countryHint">Drzava</string>
+    <string name="countryHint">Država</string>
     <string name="phoneNumberHint">Broj telefona</string>
     <string name="createAdHint">Kreiraj oglas</string>
     <string name="createAdTitle">Kreiranje oglasa</string>
@@ -91,13 +91,13 @@
     <string name="carBodyHint">Tip karoserije</string>
     <string name="changeUserData">Izmenite podatke</string>
     <string name="changeAdTitle">Izmenite oglas</string>
-    <string name="changeAdHint">Sacuvaj izmene</string>
+    <string name="changeAdHint">Sačuvaj izmene</string>
     <string name="minPriceText">Min cena</string>
     <string name="maxPriceText">Max cena</string>
-    <string name="minMileageText">Min kilometraza</string>
-    <string name="maxMileageText">Max kilometraza</string>
-    <string name="minEngineCubicText">Min kubikaza</string>
-    <string name="maxEngineCubicText">Max kubikaza</string>
+    <string name="minMileageText">Min kilometraža</string>
+    <string name="maxMileageText">Max kilometraža</string>
+    <string name="minEngineCubicText">Min kubikaža</string>
+    <string name="maxEngineCubicText">Max kubikaža</string>
     <string name="minHPText">Min KS</string>
     <string name="maxHPText">Max KS</string>
     <string name="minKWText">Min KW</string>
@@ -216,7 +216,6 @@
         <item>Oštećeno</item>
         <item>Oldtimer</item>
         <item>Restaurirano</item>
-        <item>Korišćeno</item>
     </string-array>
 
     <string-array name="fuel_type">
@@ -225,7 +224,7 @@
         <item>Dizel</item>
         <item>Benzin + Gas (TNG)</item>
         <item>Benzin + Metan (CNG)</item>
-        <item>Elektricni pogon</item>
+        <item>Električni pogon</item>
         <item>Hibridni pogon</item>
     </string-array>
 

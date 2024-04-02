@@ -10,7 +10,7 @@
         android:id="@+id/registrationTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="100dp"
         android:fontFamily="sans-serif-condensed-medium"
         android:text="@string/registration"
         android:textSize="20sp"
