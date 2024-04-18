@@ -76,14 +76,14 @@ class SearchResultFragment : Fragment() {
     }
 
     private fun showErrorDialog() {
-        AlertDialog.Builder(requireContext()).apply {
+        val dialog = AlertDialog.Builder(requireContext()).apply {
             setTitle(R.string.error)
-            setMessage(R.string.errorMessage)
-            setPositiveButton(R.string.ok) { _, _ ->
-                requireActivity().finishAffinity()
+            setMessage("Došlo je do greške tokom pretrage. Pokušajte ponovo.")
+            setPositiveButton(R.string.ok) { dialog, _ ->
+                dialog.dismiss()
             }
-            create().show()
-        }
+            create()
+        }.show()
     }
 
     private fun getAccessToken(): String {

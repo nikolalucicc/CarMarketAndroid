@@ -124,14 +124,14 @@ class ChangeUserFragment : Fragment() {
     }
 
     private fun showErrorDialog(message: String) {
-        AlertDialog.Builder(requireContext()).apply {
+        val dialog = AlertDialog.Builder(requireContext()).apply {
             setTitle(R.string.error)
             setMessage(message)
-            setPositiveButton(R.string.ok) { _, _ ->
-                requireActivity().finishAffinity()
+            setPositiveButton(R.string.ok) { dialog, _ ->
+                dialog.dismiss()
             }
-            create().show()
-        }
+            create()
+        }.show()
     }
 
     override fun onDestroyView() {

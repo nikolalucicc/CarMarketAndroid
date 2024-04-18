@@ -80,8 +80,9 @@ class FollowAdFragment : Fragment() {
                     }
 
                     is FollowAdUIState.Error -> {
-                        Log.d("Error", state.message)
-                        showErrorDialog(state.message)
+                        binding?.followingAdsByUserProgressBar?.visibility = View.GONE
+                        Log.d("Greška", state.message)
+                        showErrorDialog("Ne pratite ni jedan oglas.")
                     }
                 }
             }
@@ -105,14 +106,14 @@ class FollowAdFragment : Fragment() {
     }
 
     private fun showErrorDialog(message: String) {
-        AlertDialog.Builder(requireContext()).apply {
+        val dialog = AlertDialog.Builder(requireContext()).apply {
             setTitle(R.string.error)
             setMessage(message)
-            setPositiveButton(R.string.ok) { _, _ ->
-                requireActivity().finishAffinity()
+            setPositiveButton(R.string.ok) { dialog, _ ->
+                dialog.dismiss()
             }
-            create().show()
-        }
+            create()
+        }.show()
     }
 
     private fun showTokenErrorDialog(message: String) {

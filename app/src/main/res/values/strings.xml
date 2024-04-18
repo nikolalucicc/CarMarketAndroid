@@ -12,8 +12,8 @@
     <string name="nav_profile">Profil</string>
     <string name="nav_following_ads">Oglasi koje pratite</string>
 
-    <string name="error">Error</string>
-    <string name="errorMessage">An error occurred. Please restart application.</string>
+    <string name="error">Greška</string>
+    <string name="errorMessage">Došlo je do greške. Ponovo pokrenite aplikaciju.</string>
     <string name="ok">OK</string>
 
     <string name="generalInformationTextView">Opšte informacije</string>

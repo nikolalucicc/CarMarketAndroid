@@ -27,6 +27,7 @@ class LoginFragment : Fragment() {
 
     private var binding: FragmentLoginBinding? = null
     private val viewModel: LoginViewModel by sharedViewModel()
+    private var errorMessageDisplayed = false
 
     private val _accessToken = MutableLiveData<String>()
     val accessToken: LiveData<String>
@@ -74,13 +75,15 @@ class LoginFragment : Fragment() {
                             val response = state.response
                             _accessToken.value = response.accessToken
                             saveAccessTokenToSharedPreferences(response.accessToken)
-                            Toast.makeText(requireContext(), "Uspešno ste se prijavili", Toast.LENGTH_SHORT).show()
                             navigateToNextScreen(response.accessToken, response.expiresIn)
-                            Log.d("Token", response.accessToken)
+                            Toast.makeText(requireContext(), "Uspešno ste se prijavili", Toast.LENGTH_SHORT).show()
                         }
 
                         is LoginUIState.Error -> {
-                            displayErrorDialog("Pogresni kredencijali")
+                            if (!errorMessageDisplayed) {
+                                displayErrorDialog("Pogrešni kredencijali. Pokušajte ponovo.")
+                                errorMessageDisplayed = true
+                            }
                         }
                     }
                 }
@@ -124,7 +127,7 @@ class LoginFragment : Fragment() {
 
     private fun displayErrorDialog(message: String) {
         AlertDialog.Builder(requireContext())
-            .setTitle("Login Greska")
+            .setTitle(R.string.error)
             .setMessage(message)
             .setPositiveButton("OK") { dialog, _ ->
                 dialog.dismiss()
@@ -135,5 +138,6 @@ class LoginFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         binding = null
+        errorMessageDisplayed = false
     }
 }

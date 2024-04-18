@@ -73,10 +73,10 @@ class RegistrationFragment : Fragment() {
             } catch (e: HttpException) {
                 when (e.code()) {
                     409 -> displayErrorDialog("Korisnicko ime ili email vec postoje")
-                    else -> displayErrorDialog("Greska")
+                    else -> displayErrorDialog(R.string.error.toString())
                 }
             } catch (e: Exception) {
-                displayErrorDialog("Greska")
+                displayErrorDialog(R.string.error.toString())
             }
         }
     }
@@ -97,7 +97,7 @@ class RegistrationFragment : Fragment() {
 
     private fun displayErrorDialog(message: String) {
         AlertDialog.Builder(requireContext())
-            .setTitle("Greska pri registraciji")
+            .setTitle("Greška pri registraciji")
             .setMessage(message)
             .setPositiveButton("OK") { dialog, _ ->
                 dialog.dismiss()
