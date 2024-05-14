@@ -56,11 +56,11 @@ class ChangeUserFragment : Fragment() {
             val newPassword = binding?.newPasswordEditText?.text.toString()
             val confirmedPassword = binding?.confirmedPasswordEditText?.text.toString()
 
-            if (email.isEmpty() || newUsername.isEmpty() || firstName.isEmpty() || lastName.isEmpty() ||
-                currentPassword.isEmpty() || newPassword.isEmpty() || confirmedPassword.isEmpty()) {
-                showErrorDialog("Molimo vas da popunite sava polja.")
-                return@setOnClickListener
-            }
+//            if (email.isEmpty() || newUsername.isEmpty() || firstName.isEmpty() || lastName.isEmpty() ||
+//                currentPassword.isEmpty() || newPassword.isEmpty() || confirmedPassword.isEmpty()) {
+//                showErrorDialog("Molimo vas da popunite sava polja.")
+//                return@setOnClickListener
+//            }
 
             if (newPassword != confirmedPassword) {
                 showErrorDialog("Nova lozinka i potvrđena lozinka se ne poklapaju.")

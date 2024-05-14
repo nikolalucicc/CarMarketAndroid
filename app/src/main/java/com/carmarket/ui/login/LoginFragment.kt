@@ -117,7 +117,7 @@ class LoginFragment : Fragment() {
         }
 
         val navController = findNavController()
-        navController.navigate(R.id.action_loginFragment_to_allAdsFragment, bundle)
+        navController.navigate(R.id.allAdsFragment, bundle)
     }
 
     private fun registrationRedirect(){

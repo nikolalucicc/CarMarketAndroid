@@ -173,6 +173,7 @@ class ChangeAdFragment : Fragment() {
             imageUrls = selectedImages
         )
 
+        Toast.makeText(requireContext(), "Uspešno ste izmenili oglas!", Toast.LENGTH_SHORT).show()
         changeAdViewModel.changeAd(adRequest, id, accessToken)
     }
 

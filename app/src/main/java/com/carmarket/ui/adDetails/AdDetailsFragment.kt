@@ -92,7 +92,7 @@ class AdDetailsFragment : Fragment() {
                         val bundle = Bundle().apply {
                             putString("accessToken", jwt)
                         }
-                        findNavController().navigate(R.id.action_adDetailsFragment_to_adsByUserFragment, bundle)
+                        findNavController().navigateUp()
                     } catch (e: Exception) {
                         Toast.makeText(requireContext(), "Greška prilikom brisanja oglasa.", Toast.LENGTH_SHORT).show()
                         Log.e("AdDetailsFragment", "Greška prilikom brisanja oglasa: ${e.message}")
